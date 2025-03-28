@@ -46,14 +46,14 @@ export default function Home() {
       </div>
 
       <div
-        className="relative z-100 mt-[-66rem] flex flex-col justify-center items-center "
+        className="relative z-100 mt-[-50rem] sm:mt-[-66rem] flex flex-col justify-center items-center "
         id="About"
       >
         <Section
-          className=" flex flex-col justify-center items-center min-h-screen overflow-hidden h-screen text-white text-center z-100 bg-black lg:px-72 md:px-48 sm:px-32 px-24"
+          className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-gray-900 lg:px-72 md:px-48 px-10 py-10 pb-96"
           customStyles={{ width: "100vw" }}
         >
-          <p className="text-amber-50 md:text-2xl text-xl mt-[-8rem] md:mt-[2rem] lg:mt-[-5rem]">
+          <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
             I'm a multidisciplinary creative professional passionate about sound
             and visuals, with a love for design and storytelling. My journey
             began in architecture, which served as a gateway to discovering and

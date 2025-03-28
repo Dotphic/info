@@ -81,7 +81,7 @@ function Collage({ background, title, children, height = "50rem" }) {
       >
         <Section
           background={background}
-          className={`w-xl flex flex-col justify-center items-center`}
+          className={`w-dvw md:w-xl flex flex-col justify-center items-center`}
           customStyles={{ height }}
         >
           <h2 className="text-amber-50 w-full font-coolvetica text-[10rem]">
@@ -103,7 +103,7 @@ export default function CreativeDirector() {
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">
           <Section
-            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden h-screen text-white text-center z-100 bg-gray-900 lg:px-72 md:px-48 sm:px-32 px-24"
+            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden text-white text-center z-100 bg-gray-900 lg:px-72 md:px-48 px-10 py-10"
             customStyles={{ width: "100vw" }}
           >
             <Paragraph>
@@ -142,7 +142,7 @@ export default function CreativeDirector() {
       </Section>
 
       <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 p-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
           <Collage background={CreativeOne}></Collage>
           <Collage background={CreativeTwo}></Collage>
           <Collage background={CreativeThree}></Collage>
@@ -159,7 +159,7 @@ export default function CreativeDirector() {
       <hr className="border-t border-2 border-b-gray-800"></hr>
 
       <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 p-8 grid-dense">
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
           <Collage background={MasonryOne} height={"20rem"}></Collage>
           <Collage background={MasonryTwo}></Collage>
           <Collage background={MasonryThree}></Collage>
@@ -178,7 +178,7 @@ export default function CreativeDirector() {
       <hr className="border-t border-2 border-b-gray-800"></hr>
 
       <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 p-8 grid-dense">
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
           <Collage background={MasonryTwenty}></Collage>
           <Collage background={MasonryTwentyOne} height={"20rem"}></Collage>
           <Collage background={MasonryTwentyTwo} height={"30rem"}></Collage>

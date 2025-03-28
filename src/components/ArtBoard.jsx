@@ -4,9 +4,9 @@ export default function ArtBoard({ background, title, children }) {
   return (
     <Section
       background={background}
-      className="w-2xl lg:w-3xl xl:w-6xl h-[50rem] flex flex-col justify-center items-center"
+      className="w-dvw md:w-xl flex flex-col justify-center items-center h-[50rem]"
     >
-      <h2 className="  text-amber-50 w-full font-coolvetica text-[10rem] ">
+      <h2 className="  text-amber-50 w-full font-coolvetica text-[5rem] md:text-[8rem]">
         {title}
       </h2>
       {children}
