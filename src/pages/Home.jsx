@@ -46,11 +46,11 @@ export default function Home() {
       </div>
 
       <div
-        className="relative z-100 mt-[-50rem] sm:mt-[-66rem] flex flex-col justify-center items-center "
+        className="relative z-100 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem] flex flex-col justify-center items-center "
         id="About"
       >
         <Section
-          className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 pb-96"
+          className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
           customStyles={{ width: "100vw" }}
         >
           <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
@@ -79,7 +79,7 @@ export default function Home() {
         </Section>
       </div>
 
-      <div className="grid grid-cols-1 place-items-center gap-20">
+      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
         <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
             <div
@@ -109,7 +109,7 @@ export default function Home() {
             />
           </button>
         </ArtBoard>
-        <div className="w-full lg:w-3xl xl:w-6xl lg:mt-[-6rem]">
+        {/* <div className="w-full lg:w-3xl xl:w-6xl lg:mt-[-6rem]">
           <iframe
             src="https://open.spotify.com/embed/artist/7Df0EzIGOjD6f50pHY38d0?utm_source=generator"
             width="100%"
@@ -117,10 +117,14 @@ export default function Home() {
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
-        </div>
+        </div> */}
 
         <ArtBoard background={ArtBoardFour} title={"Branding"}></ArtBoard>
-        <ArtBoard background={ArtBoardFive} title={"Art"}></ArtBoard>
+        <ArtBoard
+          background={ArtBoardFive}
+          title={"Art"}
+          className={"xl:col-span-2 xl:w-5xl"}
+        ></ArtBoard>
       </div>
     </>
   );
