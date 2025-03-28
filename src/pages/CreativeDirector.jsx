@@ -103,7 +103,7 @@ export default function CreativeDirector() {
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">
           <Section
-            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden text-white text-center z-100 bg-gray-900 lg:px-72 md:px-48 px-10 py-10"
+            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10"
             customStyles={{ width: "100vw" }}
           >
             <Paragraph>

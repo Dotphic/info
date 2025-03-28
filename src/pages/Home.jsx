@@ -50,7 +50,7 @@ export default function Home() {
         id="About"
       >
         <Section
-          className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-gray-900 lg:px-72 md:px-48 px-10 py-10 pb-96"
+          className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 pb-96"
           customStyles={{ width: "100vw" }}
         >
           <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
