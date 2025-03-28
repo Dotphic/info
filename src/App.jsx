@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <ScrollToTop />
       <main>
-        <Routes>
+        <Routes basename="/info">
           <Route path="/" element={<Home />} />
           <Route path="/creativedirector" element={<CreativeDirector />} />
         </Routes>
