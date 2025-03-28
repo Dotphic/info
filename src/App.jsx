@@ -24,6 +24,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/info" element={<Home />} />
           <Route path="/creativedirector" element={<CreativeDirector />} />
         </Routes>
       </main>
