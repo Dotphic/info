@@ -52,7 +52,7 @@ function Collage({ background, title, children, height = "50rem" }) {
     const centerX = width / 2;
     const centerY = height / 2;
 
-    const rotateAmountX = ((y - centerY) / centerY) * 15; // Adjust for effect strength
+    const rotateAmountX = ((y - centerY) / centerY) * 15;
     const rotateAmountY = ((centerX - x) / centerX) * 15;
 
     setRotateX(rotateAmountX);

@@ -9,8 +9,8 @@ export default function Navbar() {
 
   const links = [
     { title: "Home", url: "/" },
-    { title: "About", url: "/about" },
-    { title: "Contact", url: "/contact" },
+    { title: "About", url: "/#about" },
+    { title: "Contact", url: "/" },
   ];
 
   return (
@@ -32,12 +32,11 @@ export default function Navbar() {
           {links.map((item) => (
             <motion.div
               key={item.title}
-              href={item.url}
               className="text-blue-50 text-xl hover:text-gray-800 font-medium transition-colors smooth-link"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
-              <Link to={"/"}>{item.title}</Link>
+              <Link to={item.url}>{item.title}</Link>
             </motion.div>
           ))}
         </div>

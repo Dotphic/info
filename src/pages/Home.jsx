@@ -47,7 +47,7 @@ export default function Home() {
 
       <div
         className="relative z-100 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem] flex flex-col justify-center items-center "
-        id="About"
+        id="about"
       >
         <Section
           className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
