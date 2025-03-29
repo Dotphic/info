@@ -81,15 +81,15 @@ export default function Home() {
       </div>
 
       {/* Artboard section */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+      <div className="grid grid-cols-1 place-items-center gap-8">
         {/* Creative Direction */}
         <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
             <div
-              className="group mt-16 flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
-  shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold transition-all duration-100 
-  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
-  hover:-translate-y-0.5"
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+  hover:cursor-pointer hover:font-bold transition-all duration-100 
+  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(248,22,14)] hover:text-white  
+  "
             >
               View
             </div>
@@ -103,10 +103,10 @@ export default function Home() {
         <ArtBoard background={ArtBoardThree} title={"Music"}>
           <Link to={"/music"}>
             <div
-              className="group mt-16  flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
-  shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold transition-all duration-100 
-  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
-  hover:-translate-y-0.5 hover:border-2 hover:border-amber-50"
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+   hover:cursor-pointer hover:font-bold transition-all duration-100 
+  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white  
+  "
             >
               View
             </div>
@@ -117,7 +117,7 @@ export default function Home() {
         <ArtBoard
           background={ArtBoardFive}
           title={"Art"}
-          className={"xl:col-span-2 xl:w-5xl"}
+          className={""}
         ></ArtBoard>
       </div>
     </>
