@@ -8,8 +8,8 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const links = [
-    { title: "Home", url: "/" },
-    { title: "About", url: "/#about" },
+    { title: "Home", url: "/info/" },
+    { title: "About", url: "/info/#about" },
     { title: "Contact", url: "/" },
   ];
 
