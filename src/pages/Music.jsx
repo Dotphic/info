@@ -95,7 +95,7 @@ export default function Music() {
 
       {/* Performances */}
       <div className="flex flex-col items-center justify-center w-[90%] gap-36 mt-8">
-        <h2 className="font-coolvetica my-18 text-amber-50 text-[6rem] lg:text-[8rem]">
+        <h2 className="font-coolvetica my-18 text-amber-50 text-[5rem] md:text-[8rem]">
           performances
         </h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
