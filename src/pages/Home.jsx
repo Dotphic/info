@@ -11,7 +11,6 @@ import { motion, useScroll, useTransform, useInView } from "motion/react";
 import Section from "../components/Section";
 import ArtBoard from "../components/ArtBoard";
 
-import SpotifyIcon from "../assets/icons/spotify.svg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -23,6 +22,7 @@ export default function Home() {
 
   return (
     <>
+      {/* Hero section */}
       <div className="relative h-[250vh]">
         <div className="mt-[100vh] absolute inset-0"></div>
 
@@ -45,6 +45,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* About section */}
       <div
         className="relative z-100 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem] flex flex-col justify-center items-center "
         id="about"
@@ -79,7 +80,9 @@ export default function Home() {
         </Section>
       </div>
 
+      {/* Artboard section */}
       <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
+        {/* Creative Direction */}
         <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
             <div
@@ -92,32 +95,23 @@ export default function Home() {
             </div>
           </Link>
         </ArtBoard>
+
+        {/* Graphics design */}
         <ArtBoard background={ArtBoardTwo} title={"Graphics design"}></ArtBoard>
+
+        {/* Music */}
         <ArtBoard background={ArtBoardThree} title={"Music"}>
-          <button
-            onClick={() => window.open("https://open.spotify.com", "_blank")}
-            className="group flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+          <Link to={"/music"}>
+            <div
+              className="group flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
   shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold transition-all duration-100 
   ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
-  hover:-translate-y-0.5"
-          >
-            Check me out on
-            <img
-              src={SpotifyIcon}
-              alt="Spotify"
-              className="w-6 h-6 transition-all duration-200 group-hover:invert"
-            />
-          </button>
+  hover:-translate-y-0.5 hover:border-2 hover:border-amber-50"
+            >
+              View
+            </div>
+          </Link>
         </ArtBoard>
-        {/* <div className="w-full lg:w-3xl xl:w-6xl lg:mt-[-6rem]">
-          <iframe
-            src="https://open.spotify.com/embed/artist/7Df0EzIGOjD6f50pHY38d0?utm_source=generator"
-            width="100%"
-            height="352"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div> */}
 
         <ArtBoard background={ArtBoardFour} title={"Branding"}></ArtBoard>
         <ArtBoard

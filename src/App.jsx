@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import CreativeDirector from "./pages/CreativeDirector";
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import Music from "./pages/Music";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,9 +23,10 @@ function App() {
       <Navbar />
       <ScrollToTop />
       <main>
-        <Routes basename="/info">
+        <Routes basename="/info/">
           <Route path="/" element={<Home />} />
           <Route path="/creativedirector" element={<CreativeDirector />} />
+          <Route path="/music" element={<Music />} />
         </Routes>
       </main>
       <Footer />

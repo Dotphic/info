@@ -39,7 +39,7 @@ import MasonryTwentySeven from "../assets/images/creative-direction/Masonry-27.j
 import MasonryTwentyEight from "../assets/images/creative-direction/Masonry-28.jpg";
 import MasonryTwentyNine from "../assets/images/creative-direction/Masonry-29.jpg";
 
-function Collage({ background, title, children, height = "50rem" }) {
+function Collage({ background, title, children, height }) {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
@@ -81,7 +81,7 @@ function Collage({ background, title, children, height = "50rem" }) {
       >
         <Section
           background={background}
-          className={`w-dvw md:w-xl flex flex-col justify-center items-center`}
+          className={`w-[90vw] md:w-xl flex flex-col justify-center items-center h-[30rem]`}
           customStyles={{ height }}
         >
           <h2 className="text-amber-50 w-full font-coolvetica text-[10rem]">
@@ -98,7 +98,7 @@ export default function CreativeDirector() {
   return (
     <div className="">
       <Section>
-        <h1 className="mt-[10rem] text-center text-amber-50 w-full font-coolvetica font-20vw">
+        <h1 className="mt-[10rem] text-center text-amber-50 w-full font-coolvetica text-[15vw]">
           Creative Direction
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">
@@ -143,30 +143,30 @@ export default function CreativeDirector() {
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
-          <Collage background={CreativeOne}></Collage>
-          <Collage background={CreativeTwo}></Collage>
-          <Collage background={CreativeThree}></Collage>
-          <Collage background={CreativeFour}></Collage>
-          <Collage background={CreativeFive}></Collage>
-          <Collage background={CreativeSix}></Collage>
-          <Collage background={CreativeSeven}></Collage>
-          <Collage background={CreativeEight}></Collage>
-          <Collage background={CreativeNine}></Collage>
-          <Collage background={CreativeTen}></Collage>
+          <Collage background={CreativeOne} height="50rem"></Collage>
+          <Collage background={CreativeTwo} height="50rem"></Collage>
+          <Collage background={CreativeThree} height="50rem"></Collage>
+          <Collage background={CreativeFour} height="50rem"></Collage>
+          <Collage background={CreativeFive} height="50rem"></Collage>
+          <Collage background={CreativeSix} height="50rem"></Collage>
+          <Collage background={CreativeSeven} height="50rem"></Collage>
+          <Collage background={CreativeEight} height="50rem"></Collage>
+          <Collage background={CreativeNine} height="50rem"></Collage>
+          <Collage background={CreativeTen} height="50rem"></Collage>
         </div>
       </Section>
 
-      <hr className="border-t border-2 border-b-gray-800"></hr>
+      <hr className="border-t border-2 border-b-gray-800  py-14"></hr>
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
           <Collage background={MasonryOne} height={"20rem"}></Collage>
-          <Collage background={MasonryTwo}></Collage>
-          <Collage background={MasonryThree}></Collage>
-          <Collage background={MasonryFour}></Collage>
-          <Collage background={MasonryFive}></Collage>
+          <Collage background={MasonryTwo} height="50rem"></Collage>
+          <Collage background={MasonryThree} height="50rem"></Collage>
+          <Collage background={MasonryFour} height="50rem"></Collage>
+          <Collage background={MasonryFive} height="50rem"></Collage>
           <Collage background={MasonrySix} height={"20rem"}></Collage>
-          <Collage background={MasonrySeven}></Collage>
+          <Collage background={MasonrySeven} height="50rem"></Collage>
           <Collage background={MasonryEight} height={"60rem"}></Collage>
           <Collage background={MasonryNine} height={"20rem"}></Collage>
           <Collage background={MasonryTen} height={"30rem"}></Collage>
@@ -175,7 +175,7 @@ export default function CreativeDirector() {
         </div>
       </Section>
 
-      <hr className="border-t border-2 border-b-gray-800"></hr>
+      <hr className="border-t border-2 border-b-gray-800 py-14"></hr>
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
@@ -185,7 +185,7 @@ export default function CreativeDirector() {
           <Collage background={MasonryTwentyThree} height={"20rem"}></Collage>
           <Collage background={MasonryTwentyFour} height={"20rem"}></Collage>
           <Collage background={MasonryTwentyFive} height={"20rem"}></Collage>
-          <Collage background={MasonryTwentySix}></Collage>
+          <Collage background={MasonryTwentySix} height="50rem"></Collage>
           <Collage background={MasonryTwentySeven} height={"60rem"}></Collage>
           <Collage background={MasonryTwentyEight} height={"50rem"}></Collage>
           <Collage background={MasonryTwentyNine} height={"20rem"}></Collage>
