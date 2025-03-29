@@ -8,8 +8,8 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const links = [
-    { title: "Home", url: "/info/" },
-    { title: "About", url: "/info/#about" },
+    { title: "Home", url: "/" },
+    { title: "About", url: "/#about" },
     { title: "Contact", url: "/" },
   ];
 
@@ -86,7 +86,7 @@ export default function Navbar() {
             >
               <div className="flex flex-col items-center space-y-8">
                 {links.map((item, index) => (
-                  <motion.a
+                  <motion.div
                     key={index}
                     href={item.url}
                     className="text-2xl font-bold text-gray-800 hover:text-indigo-600"
@@ -105,8 +105,8 @@ export default function Navbar() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    {item.title}
-                  </motion.a>
+                    <Link to={item.url}>{item.title}</Link>
+                  </motion.div>
                 ))}
               </div>
               <motion.button
