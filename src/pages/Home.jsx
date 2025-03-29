@@ -86,7 +86,7 @@ export default function Home() {
         <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
             <div
-              className="group flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+              className="group mt-16 flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
   shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold transition-all duration-100 
   ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
   hover:-translate-y-0.5"
@@ -103,7 +103,7 @@ export default function Home() {
         <ArtBoard background={ArtBoardThree} title={"Music"}>
           <Link to={"/music"}>
             <div
-              className="group flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+              className="group mt-16  flex items-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
   shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold transition-all duration-100 
   ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
   hover:-translate-y-0.5 hover:border-2 hover:border-amber-50"

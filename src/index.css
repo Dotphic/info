@@ -1,6 +1,28 @@
 @import "tailwindcss";
 @import "@fontsource/gabarito";
 
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
+
 
 :root {
   font-family: "Gabarito", system-ui, Avenir, Helvetica, Arial, sans-serif;
