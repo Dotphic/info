@@ -49,6 +49,26 @@ export default function Music() {
         </div>
       </div>
 
+      <Section
+        className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
+        customStyles={{ width: "100vw" }}
+      >
+        <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
+          I'm a multidisciplinary creative professional passionate about sound
+          and visuals, with a love for design and storytelling. My journey began
+          in architecture, which served as a gateway to discovering and
+          understanding a variety of creative skills—from drawing and character
+          design to sound design and visual storytelling. Over time, this
+          foundation led me to explore digital art and audio design, where I’ve
+          been able to combine technical precision with artistic expression.{" "}
+          <br></br> <br></br> <br></br> In every project I take on, I bring
+          dedication, perseverance, and a deep love for the creative process. My
+          goal is to make meaningful art that resonates with people and tells a
+          story, whether through visuals, sound, or a mix of both. I try to
+          inspire others through my work, turning ideas into experiences that
+          leave a lasting impression.
+        </p>
+      </Section>
       {/* Youtube */}
       <div className="flex items-center justify-center w-[90%] gap-2 mt-8">
         <iframe
@@ -95,7 +115,7 @@ export default function Music() {
 
       {/* Performances */}
       <div className="flex flex-col items-center justify-center w-[90%] gap-36 mt-8">
-        <h2 className="font-coolvetica my-18 text-amber-50 text-[5rem] md:text-[8rem]">
+        <h2 className="font-coolvetica mt-20 mb-[-3rem] text-amber-50 text-[5rem] md:text-[8rem]">
           performances
         </h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
