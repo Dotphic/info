@@ -8,6 +8,7 @@ import ArtBoardFive from "../assets/images/Artboard-5.jpg";
 import Pure from "../assets/images/pure.gif";
 import MusicSet from "../assets/images/music-set.gif";
 import CreativeSet from "../assets/images/creative-set.gif";
+import YearnSet from "../assets/images/yearn-set.gif";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
@@ -118,12 +119,8 @@ export default function Home() {
           </Link>
         </ArtBoard>
 
+        <ArtBoard background={YearnSet} title={"Art"} className={""}></ArtBoard>
         <ArtBoard background={ArtBoardFour} title={"Branding"}></ArtBoard>
-        <ArtBoard
-          background={ArtBoardFive}
-          title={"Art"}
-          className={""}
-        ></ArtBoard>
       </div>
     </>
   );
