@@ -5,6 +5,8 @@ import ArtBoardThree from "../assets/images/Artboard-3.jpg";
 import ArtBoardFour from "../assets/images/Artboard-4.png";
 import ArtBoardFive from "../assets/images/Artboard-5.jpg";
 
+import Pure from "../assets/images/pure.gif";
+
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
 
@@ -97,7 +99,7 @@ export default function Home() {
         </ArtBoard>
 
         {/* Graphics design */}
-        <ArtBoard background={ArtBoardTwo} title={"Graphics design"}></ArtBoard>
+        <ArtBoard background={Pure} title={"Graphics design"}></ArtBoard>
 
         {/* Music */}
         <ArtBoard background={ArtBoardThree} title={"Music"}>

@@ -89,22 +89,47 @@ export default function Music() {
           Music Projects
         </h2>
         <div className="grid grid-cols-1 xl:grid-cols-3 place-items-center gap-8 grid-dense">
-          <a className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer md:col-span-3">
+          <a
+            href="https://youtu.be/76q0r5Fl6WU"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer md:col-span-3"
+          >
             <Section
               className={"h-80 w-80 md:w-[70rem]"}
               background={MusicOne}
             ></Section>
           </a>
-          <a className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer">
+          <a
+            href="https://youtu.be/h3v1voTVl6I"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer"
+          >
             <Section className={"h-80 w-80"} background={MusicTwo}></Section>
           </a>
-          <a className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer">
+          <a
+            href="https://youtu.be/wL7GLZDekVk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer"
+          >
             <Section className={"h-80 w-80"} background={MusicThree}></Section>
           </a>
-          <a className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer">
+          <a
+            href="https://youtu.be/_R_ApSImyKk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer"
+          >
             <Section className={"h-80 w-80"} background={MusicFour}></Section>
           </a>
-          <a className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer md:col-span-3">
+          <a
+            href="https://youtu.be/MlgjnIOVYpM"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform duration-300 hover:shadow-xl hover:shadow-gray-900 hover:cursor-pointer md:col-span-3"
+          >
             <Section
               className={"h-80 w-80 md:w-[70rem]"}
               background={MusicFive}
