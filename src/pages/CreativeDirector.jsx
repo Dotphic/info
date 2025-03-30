@@ -98,7 +98,7 @@ export default function CreativeDirector() {
   return (
     <div className="">
       <Section>
-        <h1 className="mt-[10rem] text-center text-amber-50 w-full font-coolvetica text-[15vw]">
+        <h1 className="mt-[10rem] text-center text-amber-50 w-full w- font-coolvetica text-[15vw]">
           Creative Direction
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">

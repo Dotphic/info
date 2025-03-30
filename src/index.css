@@ -24,6 +24,27 @@
 }
 
 
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: black;
+
+}
+
+
+h1 {
+  /* font-size: 3.2em; */
+  line-height: 1.1;
+}
+
 :root {
   font-family: "Gabarito", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -64,21 +85,7 @@
   }
 }
 
-body {
-  margin: 0;
 
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-
-  background-color: black;
-
-}
-
-h1 {
-  /* font-size: 3.2em; */
-  line-height: 1.1;
-}
 
 .noise-overlay {
   width: 100%;

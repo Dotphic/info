@@ -63,7 +63,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="fixed bottom-0 noise-overlay w-[100vw]"></div>
+      <div className="fixed bottom-0 noise-overlay w-dvw"></div>
     </footer>
   );
 };

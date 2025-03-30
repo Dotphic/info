@@ -53,14 +53,14 @@ export default function Home() {
 
       {/* About section */}
       <div
-        className="relative z-100 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem] flex flex-col justify-center items-center "
+        className="relative z-100 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem]  flex flex-col justify-center items-center "
         id="about"
       >
         <Section
           className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
           customStyles={{ width: "100vw" }}
         >
-          <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
+          <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] max-w-3xl ">
             I'm a multidisciplinary creative professional passionate about sound
             and visuals, with a love for design and storytelling. My journey
             began in architecture, which served as a gateway to discovering and
