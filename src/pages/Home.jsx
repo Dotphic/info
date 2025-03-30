@@ -6,6 +6,7 @@ import ArtBoardFour from "../assets/images/Artboard-4.png";
 import ArtBoardFive from "../assets/images/Artboard-5.jpg";
 
 import Pure from "../assets/images/pure.gif";
+import MusicSet from "../assets/images/music-set.gif";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
@@ -102,7 +103,7 @@ export default function Home() {
         <ArtBoard background={Pure} title={"Graphics design"}></ArtBoard>
 
         {/* Music */}
-        <ArtBoard background={ArtBoardThree} title={"Music"}>
+        <ArtBoard background={MusicSet} title={"Music"}>
           <Link to={"/music"}>
             <div
               className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
