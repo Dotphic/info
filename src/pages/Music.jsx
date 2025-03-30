@@ -49,6 +49,7 @@ export default function Music() {
         </div>
       </div>
 
+      {/* Carrer */}
       <Section
         className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
         customStyles={{ width: "100vw" }}
@@ -69,6 +70,7 @@ export default function Music() {
           leave a lasting impression.
         </p>
       </Section>
+
       {/* Youtube */}
       <div className="flex items-center justify-center w-[90%] gap-2 mt-8">
         <iframe

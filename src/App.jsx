@@ -6,6 +6,7 @@ import CreativeDirector from "./pages/CreativeDirector";
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Music from "./pages/Music";
+import Marquee from "./components/Marquee";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -20,15 +21,18 @@ function ScrollToTop() {
 function App() {
   return (
     <>
-      <Navbar />
-      <ScrollToTop />
-      <main>
-        <Routes basename="/info/">
-          <Route path="/" element={<Home />} />
-          <Route path="/creativedirector" element={<CreativeDirector />} />
-          <Route path="/music" element={<Music />} />
-        </Routes>
-      </main>
+      <div id="root-layout">
+        <Navbar />
+        <ScrollToTop />
+        <main>
+          <Routes basename="/info/">
+            <Route path="/" element={<Home />} />
+            <Route path="/creativedirector" element={<CreativeDirector />} />
+            <Route path="/music" element={<Music />} />
+          </Routes>
+        </main>
+      </div>
+      <Marquee />
       <Footer />
     </>
   );

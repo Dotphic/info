@@ -20,7 +20,7 @@ const FooterLink = ({ href, children }) => (
 
 const Footer = () => {
   return (
-    <footer className="mt-[10vh] w-full bg-black/90 text-white py-16 border-t border-white/10 relative">
+    <footer className=" w-full bg-black/90 text-white py-16 border-t border-white/10 relative">
       <div className="max-w-screen-xl mx-auto px-6">
         {/* Top Section */}
         <div className="flex flex-col items-center md:flex-row justify-between mb-12 text-center md:text-left">

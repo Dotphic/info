@@ -3,9 +3,27 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import dotphicLogo from "../assets/dotphics-logo.png";
 
+const emojis = ["🔥", "🚀", "💎", "💖", "✨", "🎶", "🦄"];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const [bubbles, setBubbles] = useState([]);
+
+  const handleClick = () => {
+    const newBubble = {
+      id: Math.random(),
+      emoji: emojis[Math.floor(Math.random() * emojis.length)],
+      x: (Math.random() - 0.5) * 100, // Random horizontal spread
+    };
+    setBubbles((prev) => [...prev, newBubble]);
+
+    // Remove bubble after animation
+    setTimeout(() => {
+      setBubbles((prev) => prev.filter((b) => b.id !== newBubble.id));
+    }, 2000);
+  };
 
   const links = [
     { title: "Home", url: "/" },
@@ -21,9 +39,25 @@ export default function Navbar() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="font-bold text-xl text-indigo-600"
+            className="font-bold text-xl text-indigo-600 relative"
+            onClick={handleClick}
           >
             <img src={dotphicLogo} className="logo"></img>
+            {/* Floating Emojis */}
+            <AnimatePresence>
+              {bubbles.map((bubble) => (
+                <motion.div
+                  key={bubble.id}
+                  initial={{ opacity: 0, y: 0, x: bubble.x }}
+                  animate={{ opacity: 1, y: -150, x: bubble.x, rotate: 360 }}
+                  exit={{ opacity: 0, y: -150 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="absolute left-1/2 top-1/2"
+                >
+                  <span className="text-2xl">{bubble.emoji}</span>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </motion.div>
         </div>
 
