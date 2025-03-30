@@ -81,7 +81,7 @@ export default function Home() {
       </div>
 
       {/* Artboard section */}
-      <div className="grid grid-cols-1 place-items-center gap-8">
+      <div className="grid grid-cols-1 place-items-center gap-8 overflow-hidden">
         {/* Creative Direction */}
         <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
