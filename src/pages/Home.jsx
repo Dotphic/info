@@ -7,6 +7,7 @@ import ArtBoardFive from "../assets/images/Artboard-5.jpg";
 
 import Pure from "../assets/images/pure.gif";
 import MusicSet from "../assets/images/music-set.gif";
+import CreativeSet from "../assets/images/creative-set.gif";
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
@@ -15,6 +16,7 @@ import Section from "../components/Section";
 import ArtBoard from "../components/ArtBoard";
 
 import { Link } from "react-router-dom";
+import { transform } from "motion";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -86,7 +88,7 @@ export default function Home() {
       {/* Artboard section */}
       <div className="grid grid-cols-1 place-items-center gap-8 overflow-hidden">
         {/* Creative Direction */}
-        <ArtBoard background={ArtBoardOne} title={"Creative Direction"}>
+        <ArtBoard background={CreativeSet} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
             <div
               className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
@@ -94,7 +96,7 @@ export default function Home() {
   ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(248,22,14)] hover:text-white  
   "
             >
-              View
+              See More
             </div>
           </Link>
         </ArtBoard>
@@ -111,7 +113,7 @@ export default function Home() {
   ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white  
   "
             >
-              View
+              See More
             </div>
           </Link>
         </ArtBoard>
