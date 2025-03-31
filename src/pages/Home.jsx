@@ -77,12 +77,19 @@ export default function Home() {
           </p>
 
           <button
-            className="bg-white mt-26 text-2xl text-black text-shadow border-none py-2 px-10 shadow-[2px_2px_4px_rgba(0,0,0,0.5)] hover:cursor-pointer hover:font-bold text transition-all duration-100 ease-[cubic-bezier(0.165,0.84,0.44,1)]
-                    hover:bg-[rgb(14,99,248)] hover:text-white hover:shadow-[2px_2px_4px_rgba(0,0,0,0.5)] 
+            className="bg-white mt-26 text-2xl text-black  border-none py-2 px-10 hover:cursor-pointer hover:font-bold text transition-all duration-100 ease-[cubic-bezier(0.165,0.84,0.44,1)]
+                    hover:bg-[rgb(248,22,14)] hover:text-white  
                     hover:-translate-y-0.5 "
           >
             Let's talk
           </button>
+          <motion.div
+            className="mt-6 text-blue-50 text-xl hover:text-gray-800 font-medium transition-colors smooth-link"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 0 }}
+          >
+            <a href="#">Download CV</a>
+          </motion.div>
         </Section>
       </div>
 
@@ -111,7 +118,7 @@ export default function Home() {
             <div
               className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
    hover:cursor-pointer hover:font-bold transition-all duration-100 
-  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white  
+  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(19,19,19)] hover:text-white  
   "
             >
               See More
