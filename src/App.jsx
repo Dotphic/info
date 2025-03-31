@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Music from "./pages/Music";
 import Marquee from "./components/Marquee";
+import Art from "./pages/Art";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/creativedirector" element={<CreativeDirector />} />
             <Route path="/music" element={<Music />} />
+            <Route path="/art" element={<Art />} />
           </Routes>
         </main>
       </div>

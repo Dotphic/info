@@ -81,7 +81,7 @@ function Collage({ background, title, children, height }) {
       >
         <Section
           background={background}
-          className={`w-[90vw] md:w-xl flex flex-col justify-center items-center h-[30rem]`}
+          className={`w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]`}
           customStyles={{ height }}
         >
           <h2 className="text-amber-50 w-full font-coolvetica text-[10rem]">

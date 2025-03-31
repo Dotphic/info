@@ -119,7 +119,18 @@ export default function Home() {
           </Link>
         </ArtBoard>
 
-        <ArtBoard background={YearnSet} title={"Art"} className={""}></ArtBoard>
+        <ArtBoard background={YearnSet} title={"Art"}>
+          <Link to={"/art"}>
+            <div
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+   hover:cursor-pointer hover:font-bold transition-all duration-100 
+  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(14,99,248)] hover:text-white  
+  "
+            >
+              See More
+            </div>
+          </Link>
+        </ArtBoard>
         <ArtBoard background={ArtBoardFour} title={"Branding"}></ArtBoard>
       </div>
     </>
