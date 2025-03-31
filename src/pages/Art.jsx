@@ -86,7 +86,7 @@ export default function Art() {
   return (
     <div>
       <Section>
-        <h1 className="mt-[10rem] text-center text-amber-50 w-full w- font-coolvetica text-[15vw]">
+        <h1 className="my-18 text-amber-50 font-coolvetica text-[10rem] md:text-[20rem]">
           Art
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">
