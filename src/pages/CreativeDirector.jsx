@@ -4,95 +4,10 @@ import Section from "../components/Section";
 import { motion } from "motion/react";
 import { useState } from "react";
 
-import CreativeOne from "../assets/images/creative-direction/Creative-1.jpg";
-import CreativeTwo from "../assets/images/creative-direction/Creative-2.jpeg";
-import CreativeThree from "../assets/images/creative-direction/Creative-3.jpg";
-import CreativeFour from "../assets/images/creative-direction/Creative-4.jpeg";
-import CreativeFive from "../assets/images/creative-direction/Creative-5.jpeg";
-import CreativeSix from "../assets/images/creative-direction/Creative-6.jpg";
-import CreativeSeven from "../assets/images/creative-direction/Creative-7.jpg";
-import CreativeEight from "../assets/images/creative-direction/Creative-8.jpg";
-import CreativeNine from "../assets/images/creative-direction/Creative-9.jpg";
-import CreativeTen from "../assets/images/creative-direction/Creative-10.jpg";
+import { image } from "motion/react-client";
+import { CreativeDirection, Masonry } from "../constants/creativeMurals";
 
-import MasonryOne from "../assets/images/creative-direction/Masonry-1.png";
-import MasonryTwo from "../assets/images/creative-direction/Masonry-2.jpg";
-import MasonryThree from "../assets/images/creative-direction/Masonry-3.jpg";
-import MasonryFour from "../assets/images/creative-direction/Masonry-4.jpg";
-import MasonryFive from "../assets/images/creative-direction/Masonry-5.png";
-import MasonrySix from "../assets/images/creative-direction/Masonry-6.jpg";
-import MasonrySeven from "../assets/images/creative-direction/Masonry-7.png";
-import MasonryEight from "../assets/images/creative-direction/Masonry-8.png";
-import MasonryNine from "../assets/images/creative-direction/Masonry-9.jpg";
-import MasonryTen from "../assets/images/creative-direction/Masonry-10.jpg";
-import MasonryEleven from "../assets/images/creative-direction/Masonry-11.png";
-import MasonryTwelve from "../assets/images/creative-direction/Masonry-12.jpg";
-
-import MasonryTwenty from "../assets/images/creative-direction/Masonry-20.jpg";
-import MasonryTwentyOne from "../assets/images/creative-direction/Masonry-21.jpg";
-import MasonryTwentyTwo from "../assets/images/creative-direction/Masonry-22.png";
-import MasonryTwentyThree from "../assets/images/creative-direction/Masonry-23.jpg";
-import MasonryTwentyFour from "../assets/images/creative-direction/Masonry-24.png";
-import MasonryTwentyFive from "../assets/images/creative-direction/Masonry-25.jpg";
-import MasonryTwentySix from "../assets/images/creative-direction/Masonry-26.jpg";
-import MasonryTwentySeven from "../assets/images/creative-direction/Masonry-27.jpeg";
-import MasonryTwentyEight from "../assets/images/creative-direction/Masonry-28.jpg";
-import MasonryTwentyNine from "../assets/images/creative-direction/Masonry-29.jpg";
-
-function Collage({ background, title, children, height }) {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-
-  const handleMouseMove = (e) => {
-    const { left, top, width, height } =
-      e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-
-    const centerX = width / 2;
-    const centerY = height / 2;
-
-    const rotateAmountX = ((y - centerY) / centerY) * 15;
-    const rotateAmountY = ((centerX - x) / centerX) * 15;
-
-    setRotateX(rotateAmountX);
-    setRotateY(rotateAmountY);
-  };
-
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-  };
-
-  return (
-    <motion.div
-      className="relative shadow-lg "
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ perspective: 5000 }}
-    >
-      <motion.div
-        animate={{
-          rotateX,
-          rotateY,
-          //   scale: 1.05,
-        }}
-        transition={{ type: "spring", stiffness: 40, damping: 10 }}
-      >
-        <Section
-          background={background}
-          className={`w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]`}
-          customStyles={{ height }}
-        >
-          <h2 className="text-amber-50 w-full font-coolvetica text-[10rem]">
-            {title}
-          </h2>
-          {children}
-        </Section>
-      </motion.div>
-    </motion.div>
-  );
-}
+import Collage from "../components/Collage";
 
 export default function CreativeDirector() {
   return (
@@ -143,16 +58,14 @@ export default function CreativeDirector() {
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
-          <Collage background={CreativeOne} height="50rem"></Collage>
-          <Collage background={CreativeTwo} height="50rem"></Collage>
-          <Collage background={CreativeThree} height="50rem"></Collage>
-          <Collage background={CreativeFour} height="50rem"></Collage>
-          <Collage background={CreativeFive} height="50rem"></Collage>
-          <Collage background={CreativeSix} height="50rem"></Collage>
-          <Collage background={CreativeSeven} height="50rem"></Collage>
-          <Collage background={CreativeEight} height="50rem"></Collage>
-          <Collage background={CreativeNine} height="50rem"></Collage>
-          <Collage background={CreativeTen} height="50rem"></Collage>
+          {CreativeDirection.map((art, index) => (
+            <Collage
+              key={index}
+              background={art}
+              className="w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]"
+              height="50rem"
+            ></Collage>
+          ))}
         </div>
       </Section>
 
@@ -160,37 +73,18 @@ export default function CreativeDirector() {
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
-          <Collage background={MasonryOne} height={"20rem"}></Collage>
-          <Collage background={MasonryTwo} height="50rem"></Collage>
-          <Collage background={MasonryThree} height="50rem"></Collage>
-          <Collage background={MasonryFour} height="50rem"></Collage>
-          <Collage background={MasonryFive} height="50rem"></Collage>
-          <Collage background={MasonrySix} height={"20rem"}></Collage>
-          <Collage background={MasonrySeven} height="50rem"></Collage>
-          <Collage background={MasonryEight} height={"60rem"}></Collage>
-          <Collage background={MasonryNine} height={"20rem"}></Collage>
-          <Collage background={MasonryTen} height={"30rem"}></Collage>
-          {/* <Collage background={MasonryEleven}></Collage> */}
-          <Collage background={MasonryTwelve} height={"20rem"}></Collage>
+          {Masonry.map((masonry, index) => (
+            <Collage
+              key={index}
+              background={masonry.image}
+              className="w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]"
+              height={masonry.height}
+            ></Collage>
+          ))}
         </div>
       </Section>
 
       <hr className="border-t border-2 border-b-gray-800 py-14"></hr>
-
-      <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
-          <Collage background={MasonryTwenty}></Collage>
-          <Collage background={MasonryTwentyOne} height={"20rem"}></Collage>
-          <Collage background={MasonryTwentyTwo} height={"30rem"}></Collage>
-          <Collage background={MasonryTwentyThree} height={"20rem"}></Collage>
-          <Collage background={MasonryTwentyFour} height={"20rem"}></Collage>
-          <Collage background={MasonryTwentyFive} height={"20rem"}></Collage>
-          <Collage background={MasonryTwentySix} height="50rem"></Collage>
-          <Collage background={MasonryTwentySeven} height={"60rem"}></Collage>
-          <Collage background={MasonryTwentyEight} height={"50rem"}></Collage>
-          <Collage background={MasonryTwentyNine} height={"20rem"}></Collage>
-        </div>
-      </Section>
     </div>
   );
 }
