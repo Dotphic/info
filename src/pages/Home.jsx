@@ -152,7 +152,7 @@ export default function Home() {
       </div>
 
       {/* Straight to the point */}
-      <div className="h-dvh flex flex-col justify-center items-center">
+      <div className=" flex flex-col justify-center items-center">
         <Section>
           <motion.h2
             className="text-amber-50 w-full font-coolvetica font-20vw"
