@@ -212,7 +212,7 @@ export default function Home() {
                   const message = e.target.message.value;
 
                   // Open email client with pre-populated data
-                  window.location.href = `mailto:contact@dotphic.com?subject=${encodeURIComponent(
+                  window.location.href = `mailto:robsizerex@gmail.com?subject=${encodeURIComponent(
                     subject
                   )}&body=${encodeURIComponent(
                     `Name: ${name}\nEmail: ${email}\n\n${message}`
@@ -294,10 +294,10 @@ export default function Home() {
                 <div className="mb-6">
                   <h4 className="text-lg mb-2 text-zinc-400">Email</h4>
                   <a
-                    href="mailto:contact@dotphic.com"
+                    href="mailto:robsizerex@gmail.com"
                     className="text-xl hover:text-[rgb(248,22,14)] transition-colors"
                   >
-                    contact@dotphic.com
+                    robsizerex@gmail.com
                   </a>
                 </div>
 
