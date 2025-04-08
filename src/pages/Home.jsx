@@ -7,6 +7,7 @@ import ArtBoardFive from "../assets/images/Artboard-5.jpg";
 import CV from "../assets/documents/Robel-Tamiru-Sebsibe-Resume[04-2025].pdf";
 
 import MasonryEleven from "../assets/images/creative-direction/Masonry-11.png";
+import Straight from "../assets/images/straight.jpg";
 
 import Pure from "../assets/images/pure.gif";
 import MusicSet from "../assets/images/music-set.gif";
@@ -150,6 +151,7 @@ export default function Home() {
         </ArtBoard>
       </div>
 
+      {/* Straight to the point */}
       <div className="h-dvh flex flex-col justify-center items-center">
         <Section>
           <motion.h2
@@ -170,7 +172,7 @@ export default function Home() {
           >
             <p>to the</p>
             <Collage
-              background={MasonryEleven}
+              background={Straight}
               height={"15rem"}
               className="hidden lg:block min-w-[25rem]"
             ></Collage>
