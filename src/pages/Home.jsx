@@ -121,7 +121,18 @@ export default function Home() {
         </ArtBoard>
 
         {/* Graphics design */}
-        <ArtBoard background={Pure} title={"Graphics design"}></ArtBoard>
+        <ArtBoard background={Pure} title={"Graphics design"}>
+          <Link to={"/graphics"}>
+            <div
+              className="absolute bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 group flex items-center justify-center gap-2 bg-white text-2xl text-black border-none py-2 px-10 
+  hover:cursor-pointer hover:font-bold transition-all duration-100 
+  ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(248,22,14)] hover:text-white  
+  "
+            >
+              See More
+            </div>
+          </Link>
+        </ArtBoard>
 
         {/* Music */}
         <ArtBoard background={MusicSet} title={"Music"}>

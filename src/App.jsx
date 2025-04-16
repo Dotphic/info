@@ -8,6 +8,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Music from "./pages/Music";
 import Marquee from "./components/Marquee";
 import Art from "./pages/Art";
+import Graphics from "./pages/Graphics";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,6 +32,7 @@ function App() {
             <Route path="/creativedirector" element={<CreativeDirector />} />
             <Route path="/music" element={<Music />} />
             <Route path="/art" element={<Art />} />
+            <Route path="/graphics" element={<Graphics />} />
           </Routes>
         </main>
       </div>
