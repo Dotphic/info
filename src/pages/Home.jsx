@@ -163,7 +163,7 @@ export default function Home() {
       </div>
 
       {/* Straight to the point */}
-      <div className=" flex flex-col justify-center items-center">
+      <div className=" my-56 flex flex-col justify-center items-center">
         <Section>
           <motion.h2
             className="text-amber-50 w-full font-coolvetica font-20vw"
@@ -314,13 +314,14 @@ export default function Home() {
 
                 <div>
                   <h4 className="text-lg mb-4 text-zinc-400">Social Media</h4>
-                  <div className="flex gap-6">
+                  <div className="flex items-center justify-center gap-6">
+                    {/* Instagram */}
                     <motion.a
                       href="https://instagram.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-[rgb(248,22,14)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                      className="bg-zinc-800 hover:bg-[rgb(225,48,108)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -333,12 +334,13 @@ export default function Home() {
                       </svg>
                     </motion.a>
 
+                    {/* LinkedIn */}
                     <motion.a
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-[rgb(14,99,248)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                      className="bg-zinc-800 hover:bg-[rgb(10,102,194)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -351,12 +353,13 @@ export default function Home() {
                       </svg>
                     </motion.a>
 
+                    {/* Twitter/X */}
                     <motion.a
-                      href="https://behance.net"
+                      href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-[rgb(19,19,19)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                      className="bg-zinc-800 hover:bg-[rgb(29,161,242)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -365,16 +368,17 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
-                        <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-12.785 4v-14h7.289c4.827 0 7.091 2.828 6.07 6.901-.826 3.328-4.225 5.752-10.439 5.75l-2.92.049v1.3h-7v-14h6.938v4.001h-4.938v2.999h3.938v3h-3.938v2.999h4.938v-4.999l1.062-.001zm9.299-6.999h-5.063c.083-1.838 1.349-2.499 2.55-2.499 1.521 0 2.373.826 2.513 2.499z" />
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                       </svg>
                     </motion.a>
 
+                    {/* SoundCloud */}
                     <motion.a
-                      href="https://dribbble.com"
+                      href="https://soundcloud.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-pink-600 w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                      className="bg-zinc-800 hover:bg-[rgb(255,85,0)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -383,7 +387,45 @@ export default function Home() {
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
-                        <path d="M12 0c-6.628 0-12 5.373-12 12s5.372 12 12 12 12-5.373 12-12-5.372-12-12-12zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073-.244-.563-.497-1.125-.767-1.68 2.31-1 4.165-2.358 5.548-4.082 1.35 1.594 2.197 3.619 2.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68-1.016-1.861-2.178-3.676-3.488-5.438.779-.197 1.591-.314 2.431-.314 2.275 0 4.368.779 6.043 2.072zm-10.516-.993c1.331 1.742 2.511 3.538 3.537 5.381-2.43.715-5.331 1.082-8.684 1.105.692-2.835 2.601-5.193 5.147-6.486zm-5.44 8.834l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48-1.432-1.719-2.296-3.927-2.296-6.334zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027.928 2.42 1.609 4.91 2.043 7.46-3.349 1.291-6.953.666-9.641-1.433zm11.586.43c-.438-2.353-1.08-4.653-1.92-6.897 1.876-.265 3.94-.196 6.199.196-.437 2.786-2.028 5.192-4.279 6.701z" />
+                        <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.868-1-.868v9.716zm-4 0h1v-6.868c-.273.227-.478.509-.623.808l-.377-.18v6.24zm-3-5.25c-.212.209-.392.436-.545.681l-.455-.22v4.789h1v-5.25zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.166-.147-.343-.287-.545-.396v5.573h1v-5.294c-.248.092-.388.134-.455.117zm1.545-1.656c-.316-.188-.557-.519-.557-.965 0-.723.586-1.31 1.311-1.31.723 0 1.309.587 1.309 1.31 0 .446-.241.777-.557.965v-1.062c.162-.179.311-.417.311-.722 0-.552-.448-1-1.063-1-.615 0-1.064.448-1.064 1 0 .305.15.543.31.722v1.062z" />
+                      </svg>
+                    </motion.a>
+
+                    {/* Spotify */}
+                    <motion.a
+                      href="https://open.spotify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ y: -5 }}
+                      className="bg-zinc-800 hover:bg-[rgb(30,215,96)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                      </svg>
+                    </motion.a>
+
+                    {/* YouTube */}
+                    <motion.a
+                      href="https://youtube.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ y: -5 }}
+                      className="bg-zinc-800 hover:bg-[rgb(255,0,0)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
                       </svg>
                     </motion.a>
                   </div>

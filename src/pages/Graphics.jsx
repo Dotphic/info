@@ -8,7 +8,7 @@ export default function Graphics() {
   return (
     <div>
       <Section>
-        <h1 className="my-18 text-amber-50 font-coolvetica text-[10rem] md:text-[20rem]">
+        <h1 className="md:my-18 mt-28 text-amber-50 font-coolvetica text-[5rem] md:text-[10rem] lg:text-[15rem]">
           Graphics Design
         </h1>
         <div className="relative z-100 flex flex-col justify-center items-center">
