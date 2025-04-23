@@ -49,7 +49,7 @@ const LoadingScreen = ({ finishLoading }) => {
     // Fallback timer in case some images fail to load
     const timeoutId = setTimeout(() => {
       finishLoading();
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timeoutId);
   }, [finishLoading]);
