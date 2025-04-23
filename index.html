@@ -5,8 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="/dotphics-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dotphic</title>
+    <link
+      rel="preload"
+      href="/src/assets/fonts/coolvetica-compressed-rg.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <style>
+      .preload-fonts {
+        position: absolute;
+        visibility: hidden;
+        pointer-events: none;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
+    <div class="preload-fonts">
+      <!-- This div forces the browser to load the font before content renders -->
+      <span style="font-family: 'Coolvetica'">.</span>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

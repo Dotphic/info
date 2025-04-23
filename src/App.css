@@ -1,9 +1,19 @@
 @font-face {
   font-family: 'Coolvetica';
-  src: url('./assets/fonts/coolvetica-compressed-rg.ttf');
+  src: url('./assets/fonts/coolvetica-compressed-rg.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  font-variant: normal;
+}
+
+/* Preload font for faster display */
+body::before {
+  content: "";
+  font-family: 'Coolvetica';
+  visibility: hidden;
+  position: absolute;
+  left: -999em;
 }
 
 #root-layout {
