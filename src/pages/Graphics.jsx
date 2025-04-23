@@ -17,25 +17,33 @@ export default function Graphics() {
             customStyles={{ width: "100vw" }}
           >
             <Paragraph>
-              Being a self-taught artist, I've always valued creativity and saw
-              it as the core of who I am. Converting abstract ideas into
-              concrete forms—often revolving around themes of reality, peace,
-              and self-discovery—is my passion. Bright, colorful aesthetics with
-              a dash of the unusual—what I like to call "pushing the
-              boundaries"—are my thing.
-            </Paragraph>
-
-            <Paragraph>
-              Since I seek to capture voices and expressions using a variety of
-              media, my work is firmly grounded in humanity and emotion. As I go
-              through this process, I ask myself and other people things like
-              "Is this it? Did they feel this way? Is this my emotional state?
-              Because the digital world offers countless opportunities for
-              creativity and expression, this exploration motivates me to use it
-              as a canvas for both my music and illustrations. Through my work,
-              I wish to promote more understanding and empathy among people, and
-              I hope to inspire others in the same way that I am inspired every
-              day.
+              My journey into graphic design and digital art actually started
+              with architecture. Back in university, architecture taught me the
+              importance of layout, presentation, and visual clarity. I’d spend
+              hours designing slides and assignments, and over time, I realized
+              I wasn’t just doing it for grades—I genuinely loved the creative
+              process. That love gradually turned into a passion, and
+              eventually, a career path.
+              <br /> <br />
+              While still in school, I started picking up freelance gigs,
+              working on small design projects whenever I could. After
+              graduating, I landed my first full-time job as a graphic designer
+              at Afromile PLC, where I got to work across several exciting
+              platforms—LinkUp Addis (events and media), Atmosphere (a
+              multicultural event space), Afromile (a discount e-commerce
+              platform), and Proofit (a marketing agency).
+              <br /> <br />
+              Each sector gave me a chance to learn something new—from event
+              branding and social media design, to newsletters, magazines, and
+              marketing materials. After a year, I stepped into the role of
+              Creative Director, managing the full visual direction of all those
+              platforms. I got hands-on with photography, videography, and even
+              set design for events, while still taking on freelance projects
+              for other companies on the side.
+              <br /> <br />
+              Now, with over 4 years of experience in the field, design is more
+              than just a job—it’s a way I tell stories, solve problems, and
+              bring ideas to life.
             </Paragraph>
           </Section>
         </div>

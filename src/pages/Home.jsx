@@ -66,28 +66,35 @@ export default function Home() {
           customStyles={{ width: "100vw" }}
         >
           <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] max-w-3xl ">
-            I'm a multidisciplinary creative professional passionate about sound
-            and visuals, with a love for design and storytelling. My journey
-            began in architecture, which served as a gateway to discovering and
-            understanding a variety of creative skills—from drawing and
-            character design to sound design and visual storytelling. Over time,
-            this foundation led me to explore digital art and audio design,
-            where I’ve been able to combine technical precision with artistic
-            expression. <br></br> <br></br> <br></br> In every project I take
-            on, I bring dedication, perseverance, and a deep love for the
-            creative process. My goal is to make meaningful art that resonates
-            with people and tells a story, whether through visuals, sound, or a
-            mix of both. I try to inspire others through my work, turning ideas
-            into experiences that leave a lasting impression.
+            Hi, I’m{" "}
+            <strong className="text-red-400">Robel Tamiru Sebsibe</strong>
+            —a multidisciplinary creative with a passion for sound, visuals, and
+            storytelling. My creative journey started in architecture, which
+            opened the door to so many other skills I’ve come to love—like
+            drawing, character design, sound design, and visual storytelling.{" "}
+            <br /> <br />
+            Over the years, I’ve found my groove in digital art and audio
+            design, where I get to blend technical precision with artistic
+            expression. I’ve spent the last 4 years working in graphic design
+            and digital art, and for the past year, I’ve been diving into
+            creative direction—guiding projects with a bigger-picture vision
+            while staying hands-on with the craft. <br /> <br />
+            In everything I do, I bring dedication, curiosity, and a genuine
+            love for the process. My goal is always to create meaningful,
+            memorable work that tells a story—whether that’s through visuals,
+            sound, or the combination of both. I want my work to connect with
+            people and maybe even inspire them, turning ideas into experiences
+            that leave a lasting impact.
           </p>
 
-          <button
+          <a
+            href="#contact"
             className="bg-white mt-26 text-2xl text-black  border-none py-2 px-10 hover:cursor-pointer hover:font-bold text transition-all duration-100 ease-[cubic-bezier(0.165,0.84,0.44,1)]
                     hover:bg-[rgb(248,22,14)] hover:text-white  
                     hover:-translate-y-0.5 "
           >
             Let's talk
-          </button>
+          </a>
           <motion.div
             className="mt-6 text-blue-50 text-xl hover:text-gray-800 font-medium transition-colors smooth-link"
             whileHover={{ y: -2 }}
@@ -105,7 +112,10 @@ export default function Home() {
       </div>
 
       {/* Artboard section */}
-      <div className="grid grid-cols-1 place-items-center gap-8 overflow-hidden">
+      <div
+        id="works"
+        className="grid grid-cols-1 place-items-center gap-8 overflow-hidden"
+      >
         {/* Creative Direction */}
         <ArtBoard background={CreativeSet} title={"Creative Direction"}>
           <Link to={"/creativedirector"}>
@@ -317,7 +327,7 @@ export default function Home() {
                   <div className="flex items-center justify-center gap-6">
                     {/* Instagram */}
                     <motion.a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/dotphic"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
@@ -336,7 +346,7 @@ export default function Home() {
 
                     {/* LinkedIn */}
                     <motion.a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/robelsebsibe"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
@@ -353,47 +363,30 @@ export default function Home() {
                       </svg>
                     </motion.a>
 
-                    {/* Twitter/X */}
+                    {/* ArtStation */}
                     <motion.a
-                      href="https://twitter.com"
+                      href="https://www.artstation.com/dotphic"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-[rgb(29,161,242)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                      className="bg-zinc-800 hover:bg-[rgb(46,204,113)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
                         width="24"
                         height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
+                        viewBox="0 0 48 48"
                       >
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        <path
+                          fill="currentColor"
+                          d="M2.141 34l3.771 6.519.001.001C6.656 41.991 8.18 43 9.94 43l.003 0 0 0h25.03l-5.194-9H2.141zM45.859 34.341c0-.872-.257-1.683-.697-2.364L30.977 7.319C30.245 5.94 28.794 5 27.124 5h-7.496l21.91 37.962 3.454-5.982C45.673 35.835 45.859 35.328 45.859 34.341zM25.838 28L16.045 11.038 6.252 28z"
+                        ></path>
                       </svg>
                     </motion.a>
-
-                    {/* SoundCloud */}
                     <motion.a
-                      href="https://soundcloud.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -5 }}
-                      className="bg-zinc-800 hover:bg-[rgb(255,85,0)] w-12 h-12 rounded-full flex items-center justify-center transition-colors"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.868-1-.868v9.716zm-4 0h1v-6.868c-.273.227-.478.509-.623.808l-.377-.18v6.24zm-3-5.25c-.212.209-.392.436-.545.681l-.455-.22v4.789h1v-5.25zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.166-.147-.343-.287-.545-.396v5.573h1v-5.294c-.248.092-.388.134-.455.117zm1.545-1.656c-.316-.188-.557-.519-.557-.965 0-.723.586-1.31 1.311-1.31.723 0 1.309.587 1.309 1.31 0 .446-.241.777-.557.965v-1.062c.162-.179.311-.417.311-.722 0-.552-.448-1-1.063-1-.615 0-1.064.448-1.064 1 0 .305.15.543.31.722v1.062z" />
-                      </svg>
-                    </motion.a>
-
-                    {/* Spotify */}
-                    <motion.a
-                      href="https://open.spotify.com"
+                      href="https://open.spotify.com/artist/7Df0EzIGOjD6f50pHY38d0?si=ImwANbriTqmucaR2FcwrdA"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
@@ -412,7 +405,7 @@ export default function Home() {
 
                     {/* YouTube */}
                     <motion.a
-                      href="https://youtube.com"
+                      href="https://www.youtube.com/@dotphic"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}

@@ -55,19 +55,31 @@ export default function Music() {
         customStyles={{ width: "100vw" }}
       >
         <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] ">
-          I'm a multidisciplinary creative professional passionate about sound
-          and visuals, with a love for design and storytelling. My journey began
-          in architecture, which served as a gateway to discovering and
-          understanding a variety of creative skills—from drawing and character
-          design to sound design and visual storytelling. Over time, this
-          foundation led me to explore digital art and audio design, where I’ve
-          been able to combine technical precision with artistic expression.{" "}
-          <br></br> <br></br> <br></br> In every project I take on, I bring
-          dedication, perseverance, and a deep love for the creative process. My
-          goal is to make meaningful art that resonates with people and tells a
-          story, whether through visuals, sound, or a mix of both. I try to
-          inspire others through my work, turning ideas into experiences that
-          leave a lasting impression.
+          My music journey started in a pretty unexpected way—back in 11th
+          grade, I heard “Bangarang” by Skrillex, and it completely changed
+          everything for me. That was the moment I fell in love with
+          music—especially modern, electronic sounds. It wasn’t just something I
+          listened to anymore; I had to know how it was made. <br />
+          <br />
+          Fast forward to 2020, during quarantine, I finally dove into music
+          production with Ableton, spending countless hours teaching myself
+          sound design and music writing. It became more than a hobby—it became
+          a core part of who I am. After years of experimenting, refining my
+          sound, and obsessing over the craft, I stepped into the world of live
+          performance in 2024. <br />
+          <br />
+          What started as playing for 10 people in a tiny room quickly turned
+          into something much bigger. Within a few months, I went from that
+          small show to performing on the biggest stage in Addis Ababa—Zoya, and
+          eventually on the Boiler Room stage, one of the most iconic platforms
+          in the world. I shared that moment with Nerliv, my close collaborator
+          and co-founder of Feleksounds—a music label we started in 2023 to help
+          change the landscape of Ethiopian electronic music. <br />
+          <br />
+          Now, with 8 years of music production experience, I’m all about
+          pushing boundaries, building immersive soundscapes, and creating space
+          for new voices in the scene. Feleksounds is more than just a
+          label—it’s a movement, and we’re just getting started.
         </p>
       </Section>
 
