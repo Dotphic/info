@@ -18,6 +18,13 @@ import PerformanceSeven from "../assets/images/music/performances/performance-07
 import PerformanceEight from "../assets/images/music/performances/performance-08.jpg";
 import PerformanceNine from "../assets/images/music/performances/performance-09.jpg";
 
+import BoilerRoomOne from "../assets/images/music/boilerroom/boilerroom-01.jpg";
+import BoilerRoomTwo from "../assets/images/music/boilerroom/boilerroom-02.jpg";
+import BoilerRoomThree from "../assets/images/music/boilerroom/boilerroom-03.jpg";
+import BoilerRoomFour from "../assets/images/music/boilerroom/boilerroom-04.jpg";
+import BoilerRoomFive from "../assets/images/music/boilerroom/boilerroom-05.jpg";
+import BoilerRoomSix from "../assets/images/music/boilerroom/boilerroom-06.jpg";
+
 export default function Music() {
   return (
     <div className="flex flex-col justify-center items-center  bg-black text-white">
@@ -193,6 +200,39 @@ export default function Music() {
           <Section
             className={"h-80 w-80 md:h-[20rem] md:w-[30rem]"}
             background={PerformanceNine}
+          ></Section>
+        </div>
+      </div>
+
+      {/* Boiler Room */}
+      <div className="flex flex-col items-center justify-center w-[90%] gap-36 mt-8">
+        <h2 className="font-coolvetica mt-20 mb-[-3rem] text-amber-50 text-[5rem] md:text-[8rem]">
+          More
+        </h2>
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
+          <Section
+            className={"h-80 w-80 md:h-[30rem] md:w-[50rem]"}
+            background={BoilerRoomOne}
+          ></Section>
+          <Section
+            className={"h-80 w-80 md:h-[20rem] md:w-[30rem] "}
+            background={BoilerRoomTwo}
+          ></Section>
+          <Section
+            className={"h-80 w-80 md:h-[40rem] md:w-[40rem]"}
+            background={BoilerRoomThree}
+          ></Section>
+          <Section
+            className={"h-80 w-80 md:h-[20rem] md:w-[30rem] "}
+            background={BoilerRoomFour}
+          ></Section>
+          <Section
+            className={"h-80 w-80 md:h-[20rem] md:w-[30rem] "}
+            background={BoilerRoomFive}
+          ></Section>
+          <Section
+            className={"h-80 w-80 md:h-[25rem] md:w-[30rem]"}
+            background={BoilerRoomSix}
           ></Section>
         </div>
       </div>

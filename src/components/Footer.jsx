@@ -1,8 +1,8 @@
 import React from "react";
 
 const links = [
-  { title: "Portfolio", href: "#" },
-  { title: "Showcase", href: "#" },
+  { title: "Director", href: "#" },
+  { title: "Art", href: "#" },
   { title: "Music", href: "#" },
   { title: "Contact", href: "#" },
   { title: "Help", href: "#" },
@@ -48,9 +48,15 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Dotphic. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <FooterLink href="#">Twitter</FooterLink>
-            <FooterLink href="#">Instagram</FooterLink>
-            <FooterLink href="#">LinkedIn</FooterLink>
+            <FooterLink href="https://www.artstation.com/dotphic">
+              ArtStation
+            </FooterLink>
+            <FooterLink href="https://www.instagram.com/dotphic">
+              Instagram
+            </FooterLink>
+            <FooterLink href="https://www.linkedin.com/in/robelsebsibe">
+              LinkedIn
+            </FooterLink>
           </div>
           <p className="text-sm text-white/70">
             Powered by Injera. Made by{" "}
