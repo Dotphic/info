@@ -3,6 +3,7 @@ import Section from "../components/Section";
 
 import Collage from "../components/Collage";
 import { GraphicsMural } from "../constants/GraphicsMural";
+import { WebMural } from "../constants/WebMural";
 
 export default function Graphics() {
   return (
@@ -54,10 +55,29 @@ export default function Graphics() {
           Some of my works
         </h2>
       </Section>
-
+      {/* Branding */}
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
+          <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[5rem]">
+            Branding
+          </h3>
           {GraphicsMural.map((art, index) => (
+            <Collage
+              key={index}
+              background={art}
+              className="w-[20rem] h-[15rem] sm:w-[40rem] sm:h-[30rem] flex flex-col justify-center items-center"
+            ></Collage>
+          ))}
+        </div>
+      </Section>
+
+      {/* Web Design */}
+      <Section>
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
+          <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[5rem]">
+            Web Design
+          </h3>
+          {WebMural.map((art, index) => (
             <Collage
               key={index}
               background={art}
