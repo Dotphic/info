@@ -48,7 +48,7 @@ export default function Art() {
       </Section>
 
       <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
+        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8">
           {Mural.map((art, index) => (
             <Collage
               key={index}

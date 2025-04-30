@@ -4,19 +4,55 @@ import Section from "../components/Section";
 import Collage from "../components/Collage";
 import { GraphicsMural } from "../constants/GraphicsMural";
 import { WebMural } from "../constants/WebMural";
+import { MagazineMurals, Posters } from "../constants/MagazineMurals";
 
 function Mural({ title, mural }) {
   return (
     <Section>
+      <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44">
+        {title}
+      </h3>
       <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
-        <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[5rem]">
-          {title}
-        </h3>
         {mural.map((art, index) => (
           <Collage
             key={index}
             background={art}
             className="w-[20rem] h-[15rem] sm:w-[40rem] sm:h-[30rem] flex flex-col justify-center items-center"
+          ></Collage>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function MagMural({ title, mural }) {
+  return (
+    <Section>
+      <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44">
+        {title}
+      </h3>
+      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
+        {mural.map((art, index) => (
+          <Collage
+            key={index}
+            background={art}
+            className="w-[22rem] h-[16rem] sm:w-[40rem] sm:h-[28rem] flex flex-col justify-center items-center"
+          ></Collage>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function PosterMural({ mural }) {
+  return (
+    <Section>
+      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
+        {mural.map((art, index) => (
+          <Collage
+            key={index}
+            background={art}
+            className="w-[22rem] h-[30rem] sm:w-[40rem] sm:h-[58rem] flex flex-col justify-center items-center"
           ></Collage>
         ))}
       </div>
@@ -76,6 +112,12 @@ export default function Graphics() {
       </Section>
       {/* Branding */}
       <Mural title={"Branding"} mural={GraphicsMural}></Mural>
+
+      {/* Magazine */}
+      <MagMural title={"Magazine"} mural={MagazineMurals}></MagMural>
+
+      {/* Poster */}
+      <PosterMural mural={Posters}></PosterMural>
 
       {/* Web Design */}
       <Mural title={"Web Design"} mural={WebMural}></Mural>
