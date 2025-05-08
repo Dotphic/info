@@ -37,7 +37,7 @@ function SocialMural({ title, mural }) {
           <Collage
             key={index}
             background={art}
-            className="w-[15rem] h-[15rem] sm:w-[20rem] sm:h-[20rem] flex flex-col justify-center items-center"
+            className="w-[15rem] h-[15rem] sm:w-[30rem] sm:h-[30rem] flex flex-col justify-center items-center"
           ></Collage>
         ))}
       </div>

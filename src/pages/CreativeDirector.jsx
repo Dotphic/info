@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { image } from "motion/react-client";
 import { CreativeDirection, Masonry } from "../constants/creativeMurals";
+import { Link } from "react-router-dom";
 
 import Collage from "../components/Collage";
 
@@ -69,7 +70,9 @@ export default function CreativeDirector() {
         </div>
       </Section>
 
-      <hr className="border-t border-2 border-b-gray-800  py-14"></hr>
+      <hr className="border-t border-2 border-b-gray-800 py-14"></hr>
+
+      <hr className="border-t  border-b-gray-800  py-14"></hr>
 
       <Section>
         <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
