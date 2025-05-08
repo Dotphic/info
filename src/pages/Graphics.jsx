@@ -7,10 +7,13 @@ import { WebMural } from "../constants/WebMural";
 import { MagazineMurals, Posters } from "../constants/MagazineMurals";
 import { SocialMediaMural } from "../constants/SocialMediaMural";
 
-function Mural({ title, mural }) {
+function Mural({ title, mural, id }) {
   return (
     <Section>
-      <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44">
+      <h3
+        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
+        id={id}
+      >
         {title}
       </h3>
       <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
@@ -26,10 +29,13 @@ function Mural({ title, mural }) {
   );
 }
 
-function SocialMural({ title, mural }) {
+function SocialMural({ title, mural, id }) {
   return (
     <Section>
-      <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44">
+      <h3
+        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
+        id={id}
+      >
         {title}
       </h3>
       <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
@@ -37,7 +43,7 @@ function SocialMural({ title, mural }) {
           <Collage
             key={index}
             background={art}
-            className="w-[15rem] h-[15rem] sm:w-[30rem] sm:h-[30rem] flex flex-col justify-center items-center"
+            className="w-[15rem] h-[15rem] sm:w-[38rem] sm:h-[38rem] flex flex-col justify-center items-center"
           ></Collage>
         ))}
       </div>
@@ -45,10 +51,13 @@ function SocialMural({ title, mural }) {
   );
 }
 
-function MagMural({ title, mural }) {
+function MagMural({ title, mural, id }) {
   return (
     <Section>
-      <h3 className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44">
+      <h3
+        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
+        id={id}
+      >
         {title}
       </h3>
       <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
@@ -64,10 +73,13 @@ function MagMural({ title, mural }) {
   );
 }
 
-function PosterMural({ mural }) {
+function PosterMural({ mural, id }) {
   return (
     <Section>
-      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
+      <div
+        className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44"
+        id={id}
+      >
         {mural.map((art, index) => (
           <Collage
             key={index}
@@ -129,23 +141,46 @@ export default function Graphics() {
         <h2 className="font-coolvetica mb-40 text-amber-50 text-[5rem] md:text-[8rem]">
           Some of my works
         </h2>
+
+        <ul className="flex justify-center items-center gap-4 sm:gap-16 flex-wrap text-2xl sm:text-4xl text-center text-red-500 mb-10">
+          <li className="smooth-link">
+            <a href="#branding">Branding</a>
+          </li>
+          <li className="smooth-link">
+            <a href="#magazine">Magazines</a>
+          </li>
+          <li className="smooth-link">
+            <a href="#poster">Poster</a>
+          </li>
+          <li className="smooth-link">
+            <a href="#webdesign">WebDesign</a>
+          </li>
+          <li className="smooth-link">
+            <a href="#socialmedia">SocialMedia</a>
+          </li>
+        </ul>
       </Section>
       {/* Branding */}
-      <Mural title={"Branding"} mural={GraphicsMural}></Mural>
+      <Mural title={"Branding"} mural={GraphicsMural} id={"branding"}></Mural>
 
       {/* Magazine */}
-      <MagMural title={"Magazine"} mural={MagazineMurals}></MagMural>
+      <MagMural
+        title={"Magazine"}
+        mural={MagazineMurals}
+        id={"magazine"}
+      ></MagMural>
 
       {/* Poster */}
-      <PosterMural mural={Posters}></PosterMural>
+      <PosterMural mural={Posters} id={"poster"}></PosterMural>
 
       {/* Web Design */}
-      <Mural title={"Web Design"} mural={WebMural}></Mural>
+      <Mural title={"Web Design"} mural={WebMural} id={"webdesign"}></Mural>
 
       {/* Social Media */}
       <SocialMural
         title={"Social Media"}
         mural={SocialMediaMural}
+        id={"socialmedia"}
       ></SocialMural>
     </div>
   );
