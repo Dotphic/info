@@ -139,7 +139,7 @@ export default function Contact() {
               >
                 robsizerex@gmail.com
               </a>
-              <p className="text-neutral-600 text-sm">Addis Ababa, Ethiopia</p>
+              <p className="text-neutral-600 text-sm">Denver, Colorado</p>
             </div>
 
             {/* Socials — editorial list */}

@@ -88,7 +88,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <div className="pt-4 text-neutral-500 text-xs leading-relaxed max-w-xs">
-                  addis ababa, ethiopia — available for creative collaborations worldwide
+                  denver, colorado — available for creative collaborations worldwide
                 </div>
               </div>
             </div>
