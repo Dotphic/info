@@ -186,7 +186,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="hidden md:block relative overflow-hidden shrink-0 w-[20vw] h-[13vw]"
+              className="relative overflow-hidden shrink-0 w-[28vw] h-[18vw] md:w-[20vw] md:h-[13vw]"
             >
               <img
                 src={Straight}
