@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const x_main_title = useTransform(scrollYProgress, [0, 1], [0, -1250]);
+  const x_main_title = useTransform(scrollYProgress, [0, 0.4], [0, -400]);
 
   return (
     <>
@@ -216,6 +216,42 @@ export default function Home() {
             Work with me →
           </Link>
         </motion.div>
+      </div>
+
+      {/* Socials */}
+      <div className="relative z-30 bg-black w-full border-t border-white/10">
+        <div className="px-6 md:px-10 lg:px-16 py-6 flex items-center justify-between">
+          <span className="text-xs uppercase tracking-[0.3em] text-neutral-500">Find me</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-neutral-600">@dotphic</span>
+        </div>
+
+        {[
+          { label: "Instagram", handle: "@dotphic", href: "https://www.instagram.com/dotphic" },
+          { label: "YouTube", handle: "@dotphic", href: "https://www.youtube.com/@dotphic" },
+          { label: "Spotify", handle: "Dotphic", href: "https://open.spotify.com/artist/7Df0EzIGOjD6f50pHY38d0" },
+          { label: "ArtStation", handle: "dotphic", href: "https://www.artstation.com/dotphic" },
+          { label: "LinkedIn", handle: "robelsebsibe", href: "https://www.linkedin.com/in/robelsebsibe" },
+        ].map((s, i) => (
+          <motion.a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+            className="group flex items-center justify-between border-t border-white/5 px-6 md:px-10 lg:px-16 py-6 hover:bg-white/[0.03] transition-colors cursor-pointer"
+          >
+            <span className="font-coolvetica text-amber-50 text-3xl md:text-5xl group-hover:translate-x-2 transition-transform duration-300">
+              {s.label}
+            </span>
+            <span className="text-neutral-600 text-xs uppercase tracking-[0.25em] group-hover:text-amber-50 transition-colors">
+              {s.handle} →
+            </span>
+          </motion.a>
+        ))}
+        <div className="border-t border-white/5" />
       </div>
 
     </>
