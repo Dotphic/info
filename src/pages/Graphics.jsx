@@ -1,187 +1,88 @@
-import Paragraph from "../components/Paragraph";
-import Section from "../components/Section";
-
-import Collage from "../components/Collage";
+import { motion } from "motion/react";
 import { GraphicsMural } from "../constants/GraphicsMural";
 import { WebMural } from "../constants/WebMural";
 import { MagazineMurals, Posters } from "../constants/MagazineMurals";
 import { SocialMediaMural } from "../constants/SocialMediaMural";
+import SplitTextReveal from "../components/SplitTextReveal";
+import FloatingStrokes from "../components/FloatingStrokes";
+import ImageMasonry from "../components/ImageMasonry";
 
-function Mural({ title, mural, id }) {
-  return (
-    <Section>
-      <h3
-        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
-        id={id}
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
-        {mural.map((art, index) => (
-          <Collage
-            key={index}
-            background={art}
-            className="w-[20rem] h-[15rem] sm:w-[40rem] sm:h-[30rem] flex flex-col justify-center items-center"
-          ></Collage>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function SocialMural({ title, mural, id }) {
-  return (
-    <Section>
-      <h3
-        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
-        id={id}
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
-        {mural.map((art, index) => (
-          <Collage
-            key={index}
-            background={art}
-            className="w-[15rem] h-[15rem] sm:w-[38rem] sm:h-[38rem] flex flex-col justify-center items-center"
-          ></Collage>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function MagMural({ title, mural, id }) {
-  return (
-    <Section>
-      <h3
-        className="font-coolvetica mb-40 text-amber-50 text-[3rem] md:text-[6rem] mt-44"
-        id={id}
-      >
-        {title}
-      </h3>
-      <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44">
-        {mural.map((art, index) => (
-          <Collage
-            key={index}
-            background={art}
-            className="w-[22rem] h-[16rem] sm:w-[40rem] sm:h-[28rem] flex flex-col justify-center items-center"
-          ></Collage>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function PosterMural({ mural, id }) {
-  return (
-    <Section>
-      <div
-        className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 mt-44"
-        id={id}
-      >
-        {mural.map((art, index) => (
-          <Collage
-            key={index}
-            background={art}
-            className="w-[22rem] h-[30rem] sm:w-[40rem] sm:h-[58rem] flex flex-col justify-center items-center"
-          ></Collage>
-        ))}
-      </div>
-    </Section>
-  );
-}
+const categories = [
+  { id: "branding", label: "Branding", items: GraphicsMural.map((src) => ({ src })) },
+  { id: "magazine", label: "Magazine", items: MagazineMurals.map((src) => ({ src })) },
+  { id: "poster", label: "Poster", items: Posters.map((src) => ({ src })) },
+  { id: "webdesign", label: "Web Design", items: WebMural.map((src) => ({ src })) },
+  { id: "socialmedia", label: "Social Media", items: SocialMediaMural.map((src) => ({ src })) },
+];
 
 export default function Graphics() {
   return (
-    <div>
-      <Section>
-        <h1 className="md:my-18 mt-28 text-amber-50 font-coolvetica text-[5rem] md:text-[10rem] lg:text-[15rem]">
-          Graphics Design
-        </h1>
-        <div className="relative z-100 flex flex-col justify-center items-center">
-          <Section
-            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10"
-            customStyles={{ width: "100vw" }}
+    <div className="bg-black min-h-screen text-white">
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24">
+        <FloatingStrokes count={10} />
+        <div className="max-w-7xl mx-auto w-full">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
           >
-            <Paragraph>
-              My journey into graphic design and digital art actually started
-              with architecture. Back in university, architecture taught me the
-              importance of layout, presentation, and visual clarity. I’d spend
-              hours designing slides and assignments, and over time, I realized
-              I wasn’t just doing it for grades—I genuinely loved the creative
-              process. That love gradually turned into a passion, and
-              eventually, a career path.
-              <br /> <br />
-              While still in school, I started picking up freelance gigs,
-              working on small design projects whenever I could. After
-              graduating, I landed my first full-time job as a graphic designer
-              at Afromile PLC, where I got to work across several exciting
-              platforms—LinkUp Addis (events and media), Atmosphere (a
-              multicultural event space), Afromile (a discount e-commerce
-              platform), and Proofit (a marketing agency).
-              <br /> <br />
-              Each sector gave me a chance to learn something new—from event
-              branding and social media design, to newsletters, magazines, and
-              marketing materials. After a year, I stepped into the role of
-              Creative Director, managing the full visual direction of all those
-              platforms. I got hands-on with photography, videography, and even
-              set design for events, while still taking on freelance projects
-              for other companies on the side.
-              <br /> <br />
-              Now, with over 4 years of experience in the field, design is more
-              than just a job—it’s a way I tell stories, solve problems, and
-              bring ideas to life.
-            </Paragraph>
-          </Section>
+            [GRAPHICS DESIGN]
+          </motion.p>
+          <h1 className="font-coolvetica text-amber-50 text-[3.5rem] sm:text-[5.5rem] md:text-[8rem] lg:text-[11rem] leading-none mb-12">
+            <SplitTextReveal splitBy="char" staggerDelay={0.03} duration={0.7} triggerOnLoad>
+              Graphics Design
+            </SplitTextReveal>
+          </h1>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
+            <div className="lg:col-span-7 space-y-8">
+              <SplitTextReveal
+                splitBy="word"
+                staggerDelay={0.02}
+                duration={0.6}
+                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
+              >
+                My design journey started with architecture — teaching me layout, presentation, and visual clarity. That love for the creative process gradually turned into a passion, and eventually, a career path.
+              </SplitTextReveal>
+              <SplitTextReveal
+                splitBy="word"
+                staggerDelay={0.018}
+                duration={0.55}
+                className="text-neutral-400 text-base md:text-lg leading-relaxed"
+              >
+                4+ years across event branding, social media, newsletters, magazines, and marketing materials. From graphic designer to Creative Director at Afromile PLC — managing visual direction across LinkUp Addis, Atmosphere, and Proofit. Design is how I tell stories, solve problems, and bring ideas to life.
+              </SplitTextReveal>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="sticky top-24 space-y-2">
+                <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-4">Categories</p>
+                {categories.map((cat) => (
+                  <a
+                    key={cat.id}
+                    href={`#${cat.id}`}
+                    className="block border-b border-white/5 pb-3 text-sm uppercase tracking-wide text-amber-50/70 hover:text-amber-50 hover:pl-2 transition-all duration-200"
+                  >
+                    {cat.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </Section>
+      </section>
 
-      <Section>
-        <h2 className="font-coolvetica mb-40 text-amber-50 text-[5rem] md:text-[8rem]">
-          Some of my works
-        </h2>
-
-        <ul className="flex justify-center items-center gap-4 sm:gap-16 flex-wrap text-2xl sm:text-4xl text-center text-red-500 mb-10">
-          <li className="smooth-link">
-            <a href="#branding">Branding</a>
-          </li>
-          <li className="smooth-link">
-            <a href="#magazine">Magazines</a>
-          </li>
-          <li className="smooth-link">
-            <a href="#poster">Poster</a>
-          </li>
-          <li className="smooth-link">
-            <a href="#webdesign">WebDesign</a>
-          </li>
-          <li className="smooth-link">
-            <a href="#socialmedia">SocialMedia</a>
-          </li>
-        </ul>
-      </Section>
-      {/* Branding */}
-      <Mural title={"Branding"} mural={GraphicsMural} id={"branding"}></Mural>
-
-      {/* Magazine */}
-      <MagMural
-        title={"Magazine"}
-        mural={MagazineMurals}
-        id={"magazine"}
-      ></MagMural>
-
-      {/* Poster */}
-      <PosterMural mural={Posters} id={"poster"}></PosterMural>
-
-      {/* Web Design */}
-      <Mural title={"Web Design"} mural={WebMural} id={"webdesign"}></Mural>
-
-      {/* Social Media */}
-      <SocialMural
-        title={"Social Media"}
-        mural={SocialMediaMural}
-        id={"socialmedia"}
-      ></SocialMural>
+      {/* Gallery sections by category */}
+      {categories.map((cat) => (
+        <section key={cat.id} id={cat.id} className="pb-32">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 flex items-baseline gap-6">
+            <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">{cat.label}</h2>
+            <span className="text-neutral-600 text-xs uppercase tracking-widest">{cat.items.length} works</span>
+          </div>
+          <ImageMasonry items={cat.items} cols={2} />
+        </section>
+      ))}
     </div>
   );
 }

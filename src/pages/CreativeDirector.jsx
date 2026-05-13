@@ -1,93 +1,80 @@
-import Paragraph from "../components/Paragraph";
-import Section from "../components/Section";
-
 import { motion } from "motion/react";
-import { useState } from "react";
-
-import { image } from "motion/react-client";
 import { CreativeDirection, Masonry } from "../constants/creativeMurals";
-import { Link } from "react-router-dom";
+import SplitTextReveal from "../components/SplitTextReveal";
+import FloatingStrokes from "../components/FloatingStrokes";
+import ImageMasonry from "../components/ImageMasonry";
 
-import Collage from "../components/Collage";
+const creativeItems = CreativeDirection.map((src) => ({ src }));
+const masonryItems = Masonry.map((m) => ({ src: m.image }));
 
 export default function CreativeDirector() {
   return (
-    <div className="">
-      <Section>
-        <h1 className="mt-[10rem] text-center text-amber-50 w-full w- font-coolvetica text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[15rem] xl:text-[18rem]">
-          Creative Direction
-        </h1>
-        <div className="relative z-100 flex flex-col justify-center items-center">
-          <Section
-            className=" flex flex-col justify-center items-center min-h-screen overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10"
-            customStyles={{ width: "100vw" }}
+    <div className="bg-black min-h-screen text-white">
+      {/* Hero */}
+      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24">
+        <FloatingStrokes count={10} />
+        <div className="max-w-7xl mx-auto w-full">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
           >
-            <Paragraph>
-              As a Creative Director, I have led and shaped visual narratives
-              across various campaigns, events, and projects, bringing a
-              distinct artistic vision to life. My expertise spans fashion
-              editorials, event branding, photography direction, and graphic
-              design, where I merge bold aesthetics with strategic storytelling.
-              I specialize in concept development, visual styling, and
-              overseeing production, ensuring each project delivers a cohesive
-              and impactful creative experience.
-            </Paragraph>
+            [CREATIVE DIRECTION]
+          </motion.p>
+          <h1 className="font-coolvetica text-amber-50 text-[4rem] sm:text-[6rem] md:text-[9rem] lg:text-[12rem] leading-none mb-16">
+            <SplitTextReveal splitBy="char" staggerDelay={0.04} duration={0.7} triggerOnLoad>
+              Creative Direction
+            </SplitTextReveal>
+          </h1>
 
-            <Paragraph>
-              I have a strong background, especially in fashion, events, and
-              food-focused content. As one of the curators for the DressUp
-              sector of a magazine, I handled graphics, photography, and overall
-              creative direction, shaping its visual identity.
-            </Paragraph>
-
-            <Paragraph>
-              I worked on creating stylish layouts that brought fashion trends,
-              event highlights, and culinary stories to life, making sure each
-              feature was both visually striking and engaging. My goal was
-              always to craft a cohesive and polished aesthetic that resonated
-              with readers.
-            </Paragraph>
-
-            <Paragraph>
-              I love using design, photography, and storytelling to create
-              content that’s not just visually appealing but also captivates and
-              connects with people
-            </Paragraph>
-          </Section>
+          {/* Editorial two-column narrative */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10 mt-8">
+            <div className="lg:col-span-7 space-y-8">
+              <SplitTextReveal
+                splitBy="word"
+                staggerDelay={0.02}
+                duration={0.6}
+                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
+              >
+                As a Creative Director, I lead and shape visual narratives across campaigns, events, and projects — bringing a distinct artistic vision to life through fashion editorials, event branding, photography direction, and graphic design.
+              </SplitTextReveal>
+              <SplitTextReveal
+                splitBy="word"
+                staggerDelay={0.018}
+                duration={0.55}
+                className="text-neutral-400 text-base md:text-lg leading-relaxed"
+              >
+                I specialize in concept development, visual styling, and overseeing production — ensuring each project delivers a cohesive and impactful creative experience. My background spans fashion, events, and food-focused content, including work as a magazine curator where I handled graphics, photography, and overall creative direction.
+              </SplitTextReveal>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="sticky top-24 space-y-4">
+                <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Disciplines</p>
+                {["Fashion Editorials", "Event Branding", "Photography Direction", "Magazine Curation", "Concept Development", "Set Design"].map((s) => (
+                  <div key={s} className="border-b border-white/5 pb-3 text-sm uppercase tracking-wide text-amber-50/70 hover:text-amber-50 transition-colors">{s}</div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </Section>
+      </section>
 
-      <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 ">
-          {CreativeDirection.map((art, index) => (
-            <Collage
-              key={index}
-              background={art}
-              className="w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]"
-              height="50rem"
-            ></Collage>
-          ))}
+      {/* Gallery — Creative Direction shots */}
+      <section className="px-0 pb-px">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Editorial</p>
         </div>
-      </Section>
+        <ImageMasonry items={creativeItems} cols={2} />
+      </section>
 
-      <hr className="border-t border-2 border-b-gray-800 py-14"></hr>
-
-      <hr className="border-t  border-b-gray-800  py-14"></hr>
-
-      <Section>
-        <div className="grid grid-cols-1 xl:grid-cols-2 place-items-center gap-8 grid-dense">
-          {Masonry.map((masonry, index) => (
-            <Collage
-              key={index}
-              background={masonry.image}
-              className="w-[100vw] md:w-xl flex flex-col justify-center items-center h-[30rem]"
-              height={masonry.height}
-            ></Collage>
-          ))}
+      {/* Gallery — Masonry / DressUp */}
+      <section className="px-0 pt-px mt-px pb-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 my-12">
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · DressUp Magazine</p>
         </div>
-      </Section>
-
-      <hr className="border-t border-2 border-b-gray-800 py-14"></hr>
+        <ImageMasonry items={masonryItems} cols={2} />
+      </section>
     </div>
   );
 }
