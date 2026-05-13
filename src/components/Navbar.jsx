@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import dotphicLogo from "../assets/dotphics-logo.png";
 
 const emojis = ["🔥", "🚀", "💎", "💖", "✨", "🎶", "🦄"];
@@ -108,67 +108,55 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu (Full Screen) */}
+        {/* Mobile Menu — slide in from right */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-white z-50 md:hidden flex flex-col items-center justify-center "
-            >
-              <div className="flex flex-col items-center space-y-8">
-                {links.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    href={item.url}
-                    className="text-2xl font-bold text-gray-800 hover:text-indigo-600"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: index * 0.1 + 0.1 },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      y: 20,
-                      transition: { delay: (2 - index) * 0.05 },
-                    }}
-                    onClick={toggleMenu}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link to={item.url}>{item.title}</Link>
-                  </motion.div>
-                ))}
-              </div>
-              <motion.button
-                className="absolute top-16 right-16 text-gray-700 hover:text-indigo-600"
-                onClick={toggleMenu}
+            <>
+              <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { delay: 0.4 } }}
-                whileHover={{ rotate: 180 }}
-                transition={{ duration: 0.3 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={toggleMenu}
+                className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              />
+              <motion.nav
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-xs bg-black md:hidden flex flex-col justify-center px-10"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <div className="space-y-8">
+                  {links.map((item, index) => (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.08 + 0.15 }}
+                      onClick={toggleMenu}
+                    >
+                      <Link
+                        to={item.url}
+                        className="block text-4xl font-coolvetica text-amber-50 hover:text-red-400 transition-colors"
+                      >
+                        {item.title}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+                <motion.button
+                  className="absolute top-6 right-6 text-amber-50 hover:text-red-400 transition-colors"
+                  onClick={toggleMenu}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { delay: 0.35 } }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </motion.button>
-
-              <div className="noise-overlay"></div>
-            </motion.div>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </motion.button>
+              </motion.nav>
+            </>
           )}
         </AnimatePresence>
       </div>

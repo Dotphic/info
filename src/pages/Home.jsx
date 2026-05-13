@@ -14,22 +14,18 @@ import MusicSet from "../assets/images/music-set.gif";
 import CreativeSet from "../assets/images/creative-set.gif";
 import YearnSet from "../assets/images/yearn-set.gif";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 import Section from "../components/Section";
 import ArtBoard from "../components/ArtBoard";
+import SplitTextReveal from "../components/SplitTextReveal";
 
 import { Link } from "react-router-dom";
-import { transform } from "motion";
 import Collage from "../components/Collage";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const x_main_title = useTransform(scrollYProgress, [0, 1], [0, -1250]);
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   return (
     <>
@@ -45,12 +41,16 @@ export default function Home() {
             <motion.h1
               className="h-dvh flex flex-col justify-center items-center text-amber-50 w-full font-coolvetica font-20vw"
               style={{ x: x_main_title }}
-              ref={ref}
-              initial={{ opacity: 0, y: 10 }} // Start invisible & off-screen right
-              animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
-              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              DOTPHIC
+              <SplitTextReveal
+                splitBy="char"
+                staggerDelay={0.06}
+                duration={0.8}
+                delay={0.2}
+                triggerOnLoad
+              >
+                DOTPHIC
+              </SplitTextReveal>
             </motion.h1>
           </Section>
         </div>
@@ -65,26 +65,10 @@ export default function Home() {
           className=" flex flex-col justify-center items-center overflow-hidden text-white text-center z-100 bg-black lg:px-72 md:px-48 px-10 py-10 md:py-48 pb-96"
           customStyles={{ width: "100vw" }}
         >
-          <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] max-w-3xl ">
-            Hi, I’m{" "}
-            <strong className="text-red-400">Robel Tamiru Sebsibe</strong>
-            —a multidisciplinary creative with a passion for sound, visuals, and
-            storytelling. My creative journey started in architecture, which
-            opened the door to so many other skills I’ve come to love—like
-            drawing, character design, sound design, and visual storytelling.{" "}
-            <br /> <br />
-            Over the years, I’ve found my groove in digital art and audio
-            design, where I get to blend technical precision with artistic
-            expression. I’ve spent the last 4 years working in graphic design
-            and digital art, and for the past year, I’ve been diving into
-            creative direction—guiding projects with a bigger-picture vision
-            while staying hands-on with the craft. <br /> <br />
-            In everything I do, I bring dedication, curiosity, and a genuine
-            love for the process. My goal is always to create meaningful,
-            memorable work that tells a story—whether that’s through visuals,
-            sound, or the combination of both. I want my work to connect with
-            people and maybe even inspire them, turning ideas into experiences
-            that leave a lasting impact.
+          <p className="text-amber-50 md:text-2xl text-xl mt-[5rem] md:mt-[2rem] lg:mt-[-5rem] max-w-3xl leading-relaxed">
+            <SplitTextReveal splitBy="word" staggerDelay={0.025} duration={0.6}>
+              Hi, I’m Robel Tamiru Sebsibe — a multidisciplinary creative with a passion for sound, visuals, and storytelling. My creative journey started in architecture, which opened the door to so many other skills I’ve come to love — like drawing, character design, sound design, and visual storytelling. Over the years, I’ve found my groove in digital art and audio design, where I get to blend technical precision with artistic expression. I’ve spent the last 4 years working in graphic design and digital art, and for the past year, I’ve been diving into creative direction — guiding projects with a bigger-picture vision while staying hands-on with the craft. In everything I do, I bring dedication, curiosity, and a genuine love for the process. My goal is always to create meaningful, memorable work that tells a story — whether that’s through visuals, sound, or the combination of both.
+            </SplitTextReveal>
           </p>
 
           <a
@@ -175,38 +159,26 @@ export default function Home() {
       {/* Straight to the point */}
       <div className=" my-56 flex flex-col justify-center items-center">
         <Section>
-          <motion.h2
-            className="text-amber-50 w-full font-coolvetica font-20vw"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            Straight
-          </motion.h2>
-          <motion.h2
-            className="flex flex-row justify-center gap-8 items-center text-amber-50 w-full font-coolvetica font-20vw"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <p>to the</p>
+          <h2 className="text-amber-50 w-full font-coolvetica font-20vw">
+            <SplitTextReveal splitBy="char" staggerDelay={0.05} duration={0.7}>
+              Straight
+            </SplitTextReveal>
+          </h2>
+          <h2 className="flex flex-row justify-center gap-8 items-center text-amber-50 w-full font-coolvetica font-20vw">
+            <SplitTextReveal splitBy="char" staggerDelay={0.05} duration={0.7} delay={0.15}>
+              to the
+            </SplitTextReveal>
             <Collage
               background={Straight}
               height={"15rem"}
               className="hidden lg:block min-w-[25rem]"
             ></Collage>
-          </motion.h2>
-          <motion.h2
-            className="text-amber-50 w-full font-coolvetica font-20vw"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Bold Ideas
-          </motion.h2>
+          </h2>
+          <h2 className="text-amber-50 w-full font-coolvetica font-20vw">
+            <SplitTextReveal splitBy="char" staggerDelay={0.05} duration={0.7} delay={0.3}>
+              Bold Ideas
+            </SplitTextReveal>
+          </h2>
         </Section>
       </div>
 
@@ -217,7 +189,9 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-8xl font-coolvetica mb-10 text-center">
-            LET'S CONNECT
+            <SplitTextReveal splitBy="char" staggerDelay={0.04} duration={0.7}>
+              LET'S CONNECT
+            </SplitTextReveal>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

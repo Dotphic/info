@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import SplitTextReveal from "./SplitTextReveal";
 import heroProfile from "../assets/images/hero-profile.png";
 import creativeSet from "../assets/images/creative-set.gif";
 import musicSet from "../assets/images/music-set.gif";
@@ -61,14 +62,17 @@ const LoadingScreen = ({ finishLoading }) => {
       transition={{ duration: 0.75, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center z-50"
     >
-      <motion.h1
-        className="text-amber-50 font-coolvetica text-8xl mb-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        DOTPHIC
-      </motion.h1>
+      <h1 className="text-amber-50 font-coolvetica text-8xl mb-10">
+        <SplitTextReveal
+          splitBy="char"
+          staggerDelay={0.08}
+          duration={0.6}
+          delay={0.1}
+          triggerOnLoad
+        >
+          DOTPHIC
+        </SplitTextReveal>
+      </h1>
 
       <motion.div
         className="w-64 h-1 bg-zinc-800 rounded-full overflow-hidden"
