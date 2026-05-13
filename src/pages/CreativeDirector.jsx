@@ -31,22 +31,16 @@ export default function CreativeDirector() {
           {/* Editorial two-column narrative */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10 mt-8">
             <div className="lg:col-span-7 space-y-8">
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.02}
-                duration={0.6}
-                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
-              >
-                As a Creative Director, I lead and shape visual narratives across campaigns, events, and projects — bringing a distinct artistic vision to life through fashion editorials, event branding, photography direction, and graphic design.
-              </SplitTextReveal>
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.018}
-                duration={0.55}
-                className="text-neutral-400 text-base md:text-lg leading-relaxed"
-              >
-                I specialize in concept development, visual styling, and overseeing production — ensuring each project delivers a cohesive and impactful creative experience. My background spans fashion, events, and food-focused content, including work as a magazine curator where I handled graphics, photography, and overall creative direction.
-              </SplitTextReveal>
+              <p className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug">
+                <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.6}>
+                  As a Creative Director, I lead and shape visual narratives across campaigns, events, and projects — bringing a distinct artistic vision to life through fashion editorials, event branding, photography direction, and graphic design.
+                </SplitTextReveal>
+              </p>
+              <p className="text-neutral-400 text-base md:text-lg leading-relaxed">
+                <SplitTextReveal splitBy="word" staggerDelay={0.018} duration={0.55}>
+                  I specialize in concept development, visual styling, and overseeing production — ensuring each project delivers a cohesive and impactful creative experience. My background spans fashion, events, and food-focused content, including work as a magazine curator where I handled graphics, photography, and overall creative direction.
+                </SplitTextReveal>
+              </p>
             </div>
             <div className="lg:col-span-5">
               <div className="sticky top-24 space-y-4">

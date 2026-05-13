@@ -9,6 +9,7 @@ import Music from "./pages/Music";
 import Marquee from "./components/Marquee";
 import Art from "./pages/Art";
 import Graphics from "./pages/Graphics";
+import Contact from "./pages/Contact";
 import LoadingScreen from "./components/LoadingScreen";
 import { AnimatePresence } from "motion/react";
 
@@ -49,6 +50,7 @@ function App() {
                   <Route path="/music" element={<Music />} />
                   <Route path="/art" element={<Art />} />
                   <Route path="/graphics" element={<Graphics />} />
+                  <Route path="/contact" element={<Contact />} />
                 </Routes>
               </main>
             </div>

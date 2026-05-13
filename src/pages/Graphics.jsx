@@ -38,22 +38,16 @@ export default function Graphics() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
             <div className="lg:col-span-7 space-y-8">
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.02}
-                duration={0.6}
-                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
-              >
-                My design journey started with architecture — teaching me layout, presentation, and visual clarity. That love for the creative process gradually turned into a passion, and eventually, a career path.
-              </SplitTextReveal>
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.018}
-                duration={0.55}
-                className="text-neutral-400 text-base md:text-lg leading-relaxed"
-              >
-                4+ years across event branding, social media, newsletters, magazines, and marketing materials. From graphic designer to Creative Director at Afromile PLC — managing visual direction across LinkUp Addis, Atmosphere, and Proofit. Design is how I tell stories, solve problems, and bring ideas to life.
-              </SplitTextReveal>
+              <p className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug">
+                <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.6}>
+                  My design journey started with architecture — teaching me layout, presentation, and visual clarity. That love for the creative process gradually turned into a passion, and eventually, a career path.
+                </SplitTextReveal>
+              </p>
+              <p className="text-neutral-400 text-base md:text-lg leading-relaxed">
+                <SplitTextReveal splitBy="word" staggerDelay={0.018} duration={0.55}>
+                  4+ years across event branding, social media, newsletters, magazines, and marketing materials. From graphic designer to Creative Director at Afromile PLC — managing visual direction across LinkUp Addis, Atmosphere, and Proofit. Design is how I tell stories, solve problems, and bring ideas to life.
+                </SplitTextReveal>
+              </p>
             </div>
             <div className="lg:col-span-5">
               <div className="sticky top-24 space-y-2">

@@ -27,8 +27,8 @@ export default function Navbar() {
 
   const links = [
     { title: "Home", url: "/" },
-    { title: "Work", url: "/#about" },
-    { title: "Contact", url: "/#contact" },
+    { title: "Work", url: "/#works" },
+    { title: "Contact", url: "/contact" },
   ];
 
   return (

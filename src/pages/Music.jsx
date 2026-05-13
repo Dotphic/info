@@ -67,22 +67,16 @@ export default function Music() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
             <div className="lg:col-span-7 space-y-8">
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.02}
-                duration={0.6}
-                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
-              >
-                My music journey began in 11th grade when Skrillex's "Bangarang" changed everything. That was the moment I fell in love with electronic music — not just to listen, but to create.
-              </SplitTextReveal>
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.018}
-                duration={0.55}
-                className="text-neutral-400 text-base md:text-lg leading-relaxed"
-              >
-                In 2020, during quarantine, I dove into Ableton. After years of obsessing over sound design, I stepped into live performance in 2024 — going from playing for 10 people to performing on Zoya and the Boiler Room stage in Addis Ababa. With Nerliv, I co-founded Feleksounds in 2023 — a music label pushing Ethiopian electronic music forward.
-              </SplitTextReveal>
+              <p className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug">
+                <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.6}>
+                  My music journey began in 11th grade when Skrillex's "Bangarang" changed everything. That was the moment I fell in love with electronic music — not just to listen, but to create.
+                </SplitTextReveal>
+              </p>
+              <p className="text-neutral-400 text-base md:text-lg leading-relaxed">
+                <SplitTextReveal splitBy="word" staggerDelay={0.018} duration={0.55}>
+                  In 2020, during quarantine, I dove into Ableton. After years of obsessing over sound design, I stepped into live performance in 2024 — going from playing for 10 people to performing on Zoya and the Boiler Room stage in Addis Ababa. With Nerliv, I co-founded Feleksounds in 2023 — a music label pushing Ethiopian electronic music forward.
+                </SplitTextReveal>
+              </p>
             </div>
             <div className="lg:col-span-5">
               <div className="sticky top-24 space-y-4">
@@ -172,22 +166,16 @@ export default function Music() {
                   </a>
                   <div className={`flex flex-col justify-center gap-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                     <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">{project.year}</p>
-                    <SplitTextReveal
-                      splitBy="word"
-                      staggerDelay={0.04}
-                      duration={0.6}
-                      className="font-coolvetica text-amber-50 text-3xl md:text-4xl"
-                    >
-                      {project.title}
-                    </SplitTextReveal>
-                    <SplitTextReveal
-                      splitBy="word"
-                      staggerDelay={0.02}
-                      duration={0.5}
-                      className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-md"
-                    >
-                      {project.description}
-                    </SplitTextReveal>
+                    <p className="font-coolvetica text-amber-50 text-3xl md:text-4xl">
+                      <SplitTextReveal splitBy="word" staggerDelay={0.04} duration={0.6}>
+                        {project.title}
+                      </SplitTextReveal>
+                    </p>
+                    <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-md">
+                      <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.5}>
+                        {project.description}
+                      </SplitTextReveal>
+                    </p>
                     <a
                       href={project.href}
                       target="_blank"

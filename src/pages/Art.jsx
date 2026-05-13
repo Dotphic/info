@@ -29,22 +29,16 @@ export default function Art() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-10">
             <div className="lg:col-span-7 space-y-8">
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.02}
-                duration={0.6}
-                className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug"
-              >
-                Being a self-taught artist, I've always valued creativity as the core of who I am. Converting abstract ideas into concrete forms — revolving around themes of reality, peace, and self-discovery.
-              </SplitTextReveal>
-              <SplitTextReveal
-                splitBy="word"
-                staggerDelay={0.018}
-                duration={0.55}
-                className="text-neutral-400 text-base md:text-lg leading-relaxed"
-              >
-                Bright, colorful aesthetics with a dash of the unusual — what I call pushing the boundaries. My work is grounded in humanity and emotion, using a variety of media to capture voices and expressions. Through my work, I wish to promote understanding and empathy, and inspire others the same way I am inspired every day.
-              </SplitTextReveal>
+              <p className="text-amber-50 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug">
+                <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.6}>
+                  Being a self-taught artist, I've always valued creativity as the core of who I am. Converting abstract ideas into concrete forms — revolving around themes of reality, peace, and self-discovery.
+                </SplitTextReveal>
+              </p>
+              <p className="text-neutral-400 text-base md:text-lg leading-relaxed">
+                <SplitTextReveal splitBy="word" staggerDelay={0.018} duration={0.55}>
+                  Bright, colorful aesthetics with a dash of the unusual — what I call pushing the boundaries. My work is grounded in humanity and emotion, using a variety of media to capture voices and expressions. Through my work, I wish to promote understanding and empathy, and inspire others the same way I am inspired every day.
+                </SplitTextReveal>
+              </p>
             </div>
             <div className="lg:col-span-5">
               <div className="sticky top-24 space-y-4">
