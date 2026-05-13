@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 import SplitTextReveal from "../components/SplitTextReveal";
 import FloatingStrokes from "../components/FloatingStrokes";
 import ImageMasonry from "../components/ImageMasonry";
@@ -27,11 +28,11 @@ import BoilerRoomFive from "../assets/images/music/boilerroom/boilerroom-05.jpg"
 import BoilerRoomSix from "../assets/images/music/boilerroom/boilerroom-06.jpg";
 
 const musicProjects = [
-  { src: MusicOne, title: "Yearn", year: "2024", href: "https://youtu.be/76q0r5Fl6WU", description: "A sonic exploration of longing and texture — debut release from Dotphic." },
-  { src: MusicTwo, title: "Project 2", year: "2024", href: "https://youtu.be/h3v1voTVl6I", description: "Electronic soundscape with architectural influences." },
-  { src: MusicThree, title: "Project 3", year: "2024", href: "https://youtu.be/wL7GLZDekVk", description: "Pushing the limits of rhythm and space." },
-  { src: MusicFour, title: "Project 4", year: "2024", href: "https://youtu.be/_R_ApSImyKk", description: "Deep, immersive ambient production." },
-  { src: MusicFive, title: "Project 5", year: "2024", href: "https://youtu.be/MlgjnIOVYpM", description: "A collaborative journey through sound and silence." },
+  { src: MusicOne,   num: "01", title: "Akkam",         year: "2024", href: "https://youtu.be/76q0r5Fl6WU", description: "A sonic exploration of longing and texture — debut release from Dotphic." },
+  { src: MusicTwo,   num: "02", title: "Dying",         year: "2024", href: "https://youtu.be/h3v1voTVl6I", description: "Electronic soundscape with architectural influences." },
+  { src: MusicThree, num: "03", title: "Mreh",          year: "2024", href: "https://youtu.be/wL7GLZDekVk", description: "Pushing the limits of rhythm and space." },
+  { src: MusicFour,  num: "04", title: "Beza",          year: "2024", href: "https://youtu.be/_R_ApSImyKk", description: "Deep, immersive ambient production." },
+  { src: MusicFive,  num: "05", title: "Life of Frank", year: "2024", href: "https://youtu.be/MlgjnIOVYpM", description: "A collaborative journey through sound and silence." },
 ];
 
 const performanceItems = [
@@ -44,9 +45,68 @@ const boilerItems = [
   BoilerRoomFour, BoilerRoomFive, BoilerRoomSix,
 ].map((src) => ({ src }));
 
+function ProjectRow({ project, index }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="group relative flex flex-col border-t border-white/10 overflow-hidden cursor-pointer"
+    >
+      {/* Background thumbnail on hover */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-10 transition-opacity duration-500 scale-105"
+        style={{ backgroundImage: `url(${project.src})` }}
+      />
+
+      {/* Main row */}
+      <div className="relative flex items-center justify-between py-8 md:py-10">
+        <div className="flex items-center gap-8 md:gap-12">
+          <span className="text-neutral-600 text-xs tracking-widest font-mono shrink-0">{project.num}</span>
+          <span className="font-coolvetica text-amber-50 text-4xl md:text-6xl lg:text-7xl group-hover:translate-x-2 transition-transform duration-300">
+            {project.title}
+          </span>
+        </div>
+        <div className="flex items-center gap-6 shrink-0">
+          <span className="text-neutral-600 text-xs uppercase tracking-widest hidden sm:block">{project.year}</span>
+          <span className="text-neutral-500 text-sm uppercase tracking-[0.2em] group-hover:text-amber-50 transition-colors">
+            Watch →
+          </span>
+        </div>
+      </div>
+
+      {/* Description — slides in on hover */}
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="relative overflow-hidden"
+          >
+            <p className="text-neutral-400 text-sm md:text-base pb-8 pl-[calc(1.5rem+2rem+2rem)] md:pl-[calc(1.5rem+3rem+3rem)] max-w-lg leading-relaxed">
+              {project.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.a>
+  );
+}
+
 export default function Music() {
   return (
     <div className="bg-black min-h-screen text-white">
+
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24 text-left">
         <FloatingStrokes count={10} />
@@ -90,33 +150,23 @@ export default function Music() {
         </div>
       </section>
 
-      {/* Spotify embed */}
-      <section className="px-6 md:px-10 lg:px-16 pb-24">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8">Listen</p>
-          <div className="max-w-3xl">
-            <iframe
-              src="https://open.spotify.com/embed/artist/7Df0EzIGOjD6f50pHY38d0?utm_source=generator"
-              width="100%"
-              height="352"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              className="border-0"
-            />
+      {/* Boiler Room */}
+      <section className="pb-32 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mt-16 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6 mb-2">
+            <h2 className="font-coolvetica text-amber-50 text-5xl md:text-7xl lg:text-8xl">Boiler Room</h2>
+            <span className="text-neutral-600 text-xs uppercase tracking-widest">Addis Ababa · 2024</span>
           </div>
-        </div>
-      </section>
+          <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xl mt-4 mb-12 text-left">
+            A defining moment — performing live on the Boiler Room stage in Addis Ababa, bringing Dotphic's sound to one of the world's most iconic electronic music platforms.
+          </p>
 
-      {/* YouTube */}
-      <section className="px-6 md:px-10 lg:px-16 pb-24">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8">Watch</p>
-          <div className="max-w-4xl">
+          {/* Full video embed */}
+          <div className="relative w-full mb-16" style={{ paddingBottom: "56.25%" }}>
             <iframe
-              width="100%"
-              height="500"
-              src="https://www.youtube.com/embed/vAg069S6sEI?si=Oz-mrcR0HoEFqXYc"
-              title="YouTube video player"
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/XRWFyXZNJEY"
+              title="Dotphic — Boiler Room Addis Ababa 2024"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -124,91 +174,66 @@ export default function Music() {
             />
           </div>
         </div>
+
+        <ImageMasonry items={boilerItems} cols={2} aspectRatio="natural" gap="sm" />
       </section>
 
-      {/* Music Projects — editorial alternating */}
-      <section className="px-6 md:px-10 lg:px-16 pb-32">
+      {/* Listen & Watch */}
+      <section className="px-6 md:px-10 lg:px-16 pb-32 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl mb-20">
-            Music Projects
-          </h2>
-          <div className="space-y-28">
-            {musicProjects.map((project, index) => {
-              const isEven = index % 2 === 0;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center"
-                >
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group relative overflow-hidden block ${isEven ? "lg:order-1" : "lg:order-2"}`}
-                  >
-                    <div className="relative aspect-video overflow-hidden">
-                      <img
-                        src={project.src}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500 flex items-center justify-center">
-                        <span className="text-white text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                          Watch on YouTube →
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                  <div className={`flex flex-col justify-center gap-6 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                    <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">{project.year}</p>
-                    <p className="font-coolvetica text-amber-50 text-3xl md:text-4xl">
-                      <SplitTextReveal splitBy="word" staggerDelay={0.04} duration={0.6}>
-                        {project.title}
-                      </SplitTextReveal>
-                    </p>
-                    <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-md">
-                      <SplitTextReveal splitBy="word" staggerDelay={0.02} duration={0.5}>
-                        {project.description}
-                      </SplitTextReveal>
-                    </p>
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="self-start text-xs uppercase tracking-[0.25em] text-amber-50/60 hover:text-amber-50 transition-colors border-b border-amber-50/20 hover:border-amber-50/60 pb-0.5"
-                    >
-                      Watch on YouTube →
-                    </a>
-                  </div>
-                </motion.div>
-              );
-            })}
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 mt-16 mb-12">Listen & Watch</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-600 mb-4">Spotify</p>
+              <iframe
+                src="https://open.spotify.com/embed/artist/7Df0EzIGOjD6f50pHY38d0?utm_source=generator"
+                width="100%"
+                height="352"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                className="border-0"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-neutral-600 mb-4">YouTube</p>
+              <iframe
+                width="100%"
+                height="352"
+                src="https://www.youtube.com/embed/vAg069S6sEI?si=Oz-mrcR0HoEFqXYc"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Performances */}
-      <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
-          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl mb-2">Performances</h2>
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Live · 2024</p>
+      {/* Music Projects */}
+      <section className="px-6 md:px-10 lg:px-16 pb-32 border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-baseline justify-between mt-16 mb-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Projects</p>
+            <span className="text-neutral-700 text-xs font-mono">{musicProjects.length} releases</span>
+          </div>
+          {musicProjects.map((project, i) => (
+            <ProjectRow key={project.title} project={project} index={i} />
+          ))}
+          <div className="border-t border-white/10" />
         </div>
-        <ImageMasonry items={performanceItems} cols={3} />
       </section>
 
-      {/* Boiler Room */}
-      <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
-          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl mb-2">Boiler Room</h2>
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Addis Ababa · 2024</p>
+      {/* Performances */}
+      <section className="pb-32 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mt-16 mb-12 flex items-baseline gap-6">
+          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">Performances</h2>
+          <span className="text-neutral-600 text-xs uppercase tracking-widest">Live · 2024</span>
         </div>
-        <ImageMasonry items={boilerItems} cols={2} />
+        <ImageMasonry items={performanceItems} cols={3} aspectRatio="natural" gap="sm" />
       </section>
+
     </div>
   );
 }

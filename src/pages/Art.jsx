@@ -10,7 +10,7 @@ export default function Art() {
   return (
     <div className="bg-black min-h-screen text-white">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24 text-left">
+      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24 text-left border-b border-white/10">
         <FloatingStrokes count={10} />
         <div className="max-w-7xl mx-auto w-full">
           <motion.p
@@ -53,11 +53,12 @@ export default function Art() {
       </section>
 
       {/* Gallery */}
-      <section className="px-0 pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
+      <section className="pb-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 flex items-baseline gap-6">
           <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Works</p>
+          <span className="text-neutral-700 text-xs font-mono">{items.length} pieces</span>
         </div>
-        <ImageMasonry items={items} cols={2} />
+        <ImageMasonry items={items} cols={3} aspectRatio="natural" gap="sm" />
       </section>
     </div>
   );

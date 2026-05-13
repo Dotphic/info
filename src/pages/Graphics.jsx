@@ -15,6 +15,7 @@ const categories = [
   { id: "socialmedia", label: "Social Media", items: SocialMediaMural.map((src) => ({ src })) },
 ];
 
+
 export default function Graphics() {
   return (
     <div className="bg-black min-h-screen text-white">
@@ -74,7 +75,7 @@ export default function Graphics() {
             <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">{cat.label}</h2>
             <span className="text-neutral-600 text-xs uppercase tracking-widest">{cat.items.length} works</span>
           </div>
-          <ImageMasonry items={cat.items} cols={2} />
+          <ImageMasonry items={cat.items} cols={cat.id === "poster" ? 2 : 3} aspectRatio="natural" gap="sm" />
         </section>
       ))}
     </div>

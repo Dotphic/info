@@ -4,8 +4,10 @@ import SplitTextReveal from "../components/SplitTextReveal";
 import FloatingStrokes from "../components/FloatingStrokes";
 import ImageMasonry from "../components/ImageMasonry";
 
-const creativeItems = CreativeDirection.map((src) => ({ src }));
-const masonryItems = Masonry.map((m) => ({ src: m.image }));
+const allItems = [
+  ...CreativeDirection.map((src) => ({ src })),
+  ...Masonry.map((m) => ({ src: m.image })),
+];
 
 export default function CreativeDirector() {
   return (
@@ -54,20 +56,12 @@ export default function CreativeDirector() {
         </div>
       </section>
 
-      {/* Gallery — Creative Direction shots */}
-      <section className="px-0 pb-px">
+      {/* Gallery — combined */}
+      <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Editorial</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Editorial & DressUp</p>
         </div>
-        <ImageMasonry items={creativeItems} cols={2} />
-      </section>
-
-      {/* Gallery — Masonry / DressUp */}
-      <section className="px-0 pt-px mt-px pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 my-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · DressUp Magazine</p>
-        </div>
-        <ImageMasonry items={masonryItems} cols={2} />
+        <ImageMasonry items={allItems} cols={3} aspectRatio="natural" gap="sm" />
       </section>
     </div>
   );
