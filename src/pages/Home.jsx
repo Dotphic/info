@@ -9,6 +9,7 @@ import CreativeSet from "../assets/images/creative-set.gif";
 import YearnSet from "../assets/images/yearn-set.gif";
 
 import { motion, useScroll, useTransform } from "motion/react";
+import { useState, useEffect } from "react";
 
 import Section from "../components/Section";
 import SplitTextReveal from "../components/SplitTextReveal";
@@ -17,8 +18,14 @@ import FloatingStrokes from "../components/FloatingStrokes";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px) and (hover: hover)");
+    setIsDesktop(mq.matches);
+  }, []);
+
   const { scrollYProgress } = useScroll();
-  const x_main_title = useTransform(scrollYProgress, [0, 0.4], [0, -400]);
+  const x_main_title = useTransform(scrollYProgress, [0, 0.4], [0, isDesktop ? -400 : 0]);
 
   return (
     <>
@@ -33,7 +40,7 @@ export default function Home() {
           >
             <motion.h1
               className="h-dvh flex flex-col justify-center items-center text-amber-50 w-full font-coolvetica font-20vw"
-              style={{ x: x_main_title }}
+              style={{ x: x_main_title, willChange: "transform" }}
             >
               <SplitTextReveal
                 splitBy="char"
@@ -88,7 +95,7 @@ export default function Home() {
           </div>
 
           {/* CTA row */}
-          <div className="mt-20 flex flex-wrap gap-6 items-center">
+          <div className="mt-20 flex flex-col sm:flex-row gap-6 items-center">
             <Link
               to="/contact"
               className="bg-white text-xl text-black border-none py-3 px-10 hover:cursor-pointer hover:font-bold transition-all duration-100 ease-[cubic-bezier(0.165,0.84,0.44,1)] hover:bg-[rgb(248,22,14)] hover:text-white hover:-translate-y-0.5"
@@ -128,7 +135,7 @@ export default function Home() {
               >
                 {/* Background image on hover */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-500 scale-105"
+                  className="absolute inset-0 bg-cover bg-center opacity-20 md:opacity-0 md:group-hover:opacity-20 transition-opacity duration-500 scale-105"
                   style={{ backgroundImage: `url(${item.bg})` }}
                 />
                 <div className="relative flex items-center gap-10">
@@ -204,7 +211,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="px-6 md:px-10 lg:px-16 mt-14 flex items-center justify-between border-t border-white/10 pt-6"
+          className="px-6 md:px-10 lg:px-16 mt-14 flex flex-col sm:flex-row items-center sm:justify-between gap-4 border-t border-white/10 pt-6"
         >
           <p className="text-neutral-500 text-xs md:text-sm max-w-xs leading-relaxed">
             Every project carries a clear intent — no noise, no filler. Just the work.

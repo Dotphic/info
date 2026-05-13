@@ -11,18 +11,18 @@ export default function CreativeDirector() {
   return (
     <div className="bg-black min-h-screen text-white">
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24">
+      <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24 text-left">
         <FloatingStrokes count={10} />
         <div className="max-w-7xl mx-auto w-full">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
+            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 text-center"
           >
             [CREATIVE DIRECTION]
           </motion.p>
-          <h1 className="font-coolvetica text-amber-50 text-[4rem] sm:text-[6rem] md:text-[9rem] lg:text-[12rem] leading-none mb-16">
+          <h1 className="font-coolvetica text-center text-amber-50 text-[4rem] sm:text-[6rem] md:text-[9rem] lg:text-[12rem] leading-none mb-16">
             <SplitTextReveal splitBy="char" staggerDelay={0.04} duration={0.7} triggerOnLoad>
               Creative Direction
             </SplitTextReveal>

@@ -10,18 +10,18 @@ export default function Art() {
   return (
     <div className="bg-black min-h-screen text-white">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24">
+      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-10 lg:px-16 pt-40 pb-24 text-left">
         <FloatingStrokes count={10} />
         <div className="max-w-7xl mx-auto w-full">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8"
+            className="text-xs uppercase tracking-[0.3em] text-neutral-500 mb-8 text-center"
           >
             [ART]
           </motion.p>
-          <h1 className="font-coolvetica text-amber-50 text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] leading-none mb-12">
+          <h1 className="font-coolvetica text-center text-amber-50 text-[6rem] sm:text-[10rem] md:text-[14rem] lg:text-[18rem] leading-none mb-12">
             <SplitTextReveal splitBy="char" staggerDelay={0.06} duration={0.7} triggerOnLoad>
               Art
             </SplitTextReveal>
