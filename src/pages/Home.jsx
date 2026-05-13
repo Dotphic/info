@@ -147,7 +147,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Straight to the point */}
+        {/* Straight to the point */}
       <div className="relative z-30 bg-black w-full py-32 md:py-48 overflow-hidden">
         <FloatingStrokes count={8} />
 
