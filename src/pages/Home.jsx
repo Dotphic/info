@@ -87,7 +87,7 @@ export default function Home() {
                     <li key={s} className="hover:text-amber-50 transition-colors border-b border-white/5 pb-3">{s}</li>
                   ))}
                 </ul>
-                <div className="pt-4 text-neutral-500 text-xs leading-relaxed max-w-xs">
+                <div className="pt-4 text-neutral-500 text-xs leading-relaxed max-w-xs text-center">
                   denver, colorado — available for creative collaborations worldwide
                 </div>
               </div>
