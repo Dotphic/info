@@ -26,6 +26,7 @@ import BoilerRoomThree from "../assets/images/music/boilerroom/boilerroom-03.jpg
 import BoilerRoomFour from "../assets/images/music/boilerroom/boilerroom-04.jpg";
 import BoilerRoomFive from "../assets/images/music/boilerroom/boilerroom-05.jpg";
 import BoilerRoomSix from "../assets/images/music/boilerroom/boilerroom-06.jpg";
+import BoilerRoomSeven from "../assets/images/music/boilerroom/boilerroom-07.jpg";
 
 const musicProjects = [
   { src: MusicOne,   num: "01", title: "Akkam",         year: "2024", href: "https://youtu.be/76q0r5Fl6WU", description: "A sonic exploration of longing and texture — debut release from Dotphic." },
@@ -38,11 +39,11 @@ const musicProjects = [
 const performanceItems = [
   PerformanceOne, PerformanceTwo, PerformanceThree, PerformanceFour,
   PerformanceFive, PerformanceSix, PerformanceSeven, PerformanceEight, PerformanceNine,
+  BoilerRoomTwo, BoilerRoomThree, BoilerRoomFour, BoilerRoomFive, BoilerRoomSix,
 ].map((src) => ({ src }));
 
 const boilerItems = [
-  BoilerRoomOne, BoilerRoomTwo, BoilerRoomThree,
-  BoilerRoomFour, BoilerRoomFive, BoilerRoomSix,
+  BoilerRoomOne, BoilerRoomSeven,
 ].map((src) => ({ src }));
 
 function ProjectRow({ project, index }) {
