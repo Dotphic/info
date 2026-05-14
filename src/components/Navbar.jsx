@@ -28,9 +28,30 @@ export default function Navbar() {
     }, 2000);
   };
 
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
+  const handleWorkClick = (e) => {
+    e.preventDefault();
+    if (isHome) {
+      document.getElementById("works")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("works")?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  };
+
   const links = [
-    { title: "Home", url: "/" },
-    { title: "Work", url: "/#works" },
+    { title: "Home", url: "/", onClick: handleHomeClick },
+    { title: "Work", url: "/#works", onClick: handleWorkClick },
     { title: "Contact", url: "/contact" },
   ];
 
@@ -82,7 +103,7 @@ export default function Navbar() {
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
-              <Link to={item.url}>{item.title}</Link>
+              <Link to={item.url} onClick={item.onClick}>{item.title}</Link>
             </motion.div>
           ))}
         </div>
@@ -150,6 +171,7 @@ export default function Navbar() {
                     >
                       <Link
                         to={item.url}
+                        onClick={item.onClick}
                         className="block text-4xl font-coolvetica text-amber-50 hover:text-red-400 transition-colors"
                       >
                         {item.title}
