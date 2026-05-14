@@ -58,8 +58,9 @@ export default function CreativeDirector() {
 
       {/* Gallery — combined */}
       <section className="pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Editorial & DressUp</p>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 flex items-baseline gap-6">
+          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">Gallery</h2>
+          <span className="text-neutral-600 text-xs uppercase tracking-widest">{allItems.length} works</span>
         </div>
         <ImageMasonry items={allItems} cols={3} aspectRatio="natural" gap="sm" />
       </section>

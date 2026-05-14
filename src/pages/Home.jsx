@@ -26,6 +26,7 @@ export default function Home() {
 
   const { scrollYProgress } = useScroll();
   const x_main_title = useTransform(scrollYProgress, [0, 0.25], [0, isDesktop ? -800 : 0]);
+  const opacity_title = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
     <>
@@ -33,23 +34,25 @@ export default function Home() {
       <div className="relative h-[150vh]">
         <div className="mt-[100vh] absolute inset-0"></div>
 
-        <div className="sticky top-0 z-20 overflow-hidden h-svh flex flex-col">
+        <div className="sticky top-0 z-20 h-svh flex flex-col">
           <Section
-            className="sticky top-0 left-0 w-full min-h-screen flex flex-col justify-center items-center h-screen text-white text-center z-0 overflow-hidden"
+            className="sticky top-0 left-0 w-full min-h-screen flex flex-col justify-center items-center h-screen text-white text-center z-0"
           >
-            {/* Parallax zoom background */}
+            {/* Parallax zoom background — clipped independently so text can overflow */}
+            <div className="absolute inset-0 overflow-hidden">
             <motion.img
               src={heroProfile}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              className="w-full h-full object-cover pointer-events-none"
               style={{
                 scale: useTransform(scrollYProgress, [0, 0.25], [1, 1.15]),
                 willChange: "transform",
               }}
             />
+            </div>
             <motion.h1
               className="relative z-10 h-dvh flex flex-col justify-center items-center text-amber-50 w-full font-coolvetica font-20vw"
-              style={{ x: x_main_title, willChange: "transform" }}
+              style={{ x: x_main_title, opacity: opacity_title, willChange: "transform, opacity" }}
             >
               <SplitTextReveal
                 splitBy="char"
@@ -140,6 +143,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                style={{ willChange: "transform, opacity" }}
                 className="group relative flex items-center justify-between border-t border-white/10 py-14 hover:py-24 overflow-hidden cursor-pointer transition-[padding] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
               >
                 {/* Background image on hover */}
@@ -195,6 +199,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              style={{ willChange: "transform, opacity" }}
               className="relative overflow-hidden shrink-0 w-[28vw] h-[18vw] md:w-[20vw] md:h-[13vw]"
             >
               <img
@@ -220,6 +225,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
+          style={{ willChange: "transform, opacity" }}
           className="px-6 md:px-10 lg:px-16 mt-14 flex flex-col sm:flex-row items-center sm:justify-between gap-4 border-t border-white/10 pt-6"
         >
           <p className="text-neutral-500 text-xs md:text-sm max-w-xs leading-relaxed">
@@ -257,6 +263,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.06 }}
+            style={{ willChange: "transform, opacity" }}
             className="group flex items-center justify-between border-t border-white/5 px-6 md:px-10 lg:px-16 py-6 hover:bg-white/[0.03] transition-colors cursor-pointer"
           >
             <span className="font-coolvetica text-amber-50 text-3xl md:text-5xl group-hover:translate-x-2 transition-transform duration-300">

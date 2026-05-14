@@ -154,8 +154,8 @@ export default function Music() {
       {/* Boiler Room */}
       <section className="pb-32 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mt-16 mb-12">
-          <div className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6 mb-2">
-            <h2 className="font-coolvetica text-amber-50 text-5xl md:text-7xl lg:text-8xl">Boiler Room</h2>
+          <div className="flex items-baseline gap-6 mb-2">
+            <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">Boiler Room</h2>
             <span className="text-neutral-600 text-xs uppercase tracking-widest">Addis Ababa · 2024</span>
           </div>
           <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xl mt-4 mb-12 text-left">

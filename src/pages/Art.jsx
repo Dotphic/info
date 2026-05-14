@@ -55,8 +55,8 @@ export default function Art() {
       {/* Gallery */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 mb-12 flex items-baseline gap-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">Gallery · Works</p>
-          <span className="text-neutral-700 text-xs font-mono">{items.length} pieces</span>
+          <h2 className="font-coolvetica text-amber-50 text-4xl md:text-6xl">Gallery</h2>
+          <span className="text-neutral-600 text-xs uppercase tracking-widest">{items.length} works</span>
         </div>
         <ImageMasonry items={items} cols={3} aspectRatio="natural" gap="sm" />
       </section>
