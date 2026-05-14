@@ -36,7 +36,7 @@ export default function Lightbox({ items, selectedIndex, onClose, onPrev, onNext
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-[2000] bg-black/95 backdrop-blur-sm flex items-center justify-center"
           onClick={onClose}
         >
           {/* Close */}

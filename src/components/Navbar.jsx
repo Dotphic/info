@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import dotphicLogo from "../assets/dotphics-logo.png";
 
@@ -8,6 +8,9 @@ const emojis = ["🔥", "🚀", "💎", "💖", "✨", "🎶", "🦄"];
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   const [bubbles, setBubbles] = useState([]);
 
@@ -34,18 +37,27 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full sm:px-6 py-2  bg-gradient-to-b from-black to-transparent z-1000">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo / Back Button */}
         <div className="flex-shrink-0 ">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="font-bold text-xl text-indigo-600 relative"
-            onClick={handleClick}
+            onClick={isHome ? handleClick : () => navigate(-1)}
           >
-            <img src={dotphicLogo} className="logo"></img>
+            {isHome ? (
+              <img src={dotphicLogo} className="logo" />
+            ) : (
+              <div className="flex items-center gap-2 text-amber-50 cursor-pointer" style={{ height: "7em", padding: "1.5em" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="text-base font-medium">Back</span>
+              </div>
+            )}
             {/* Floating Emojis */}
             <AnimatePresence>
-              {bubbles.map((bubble) => (
+              {isHome && bubbles.map((bubble) => (
                 <motion.div
                   key={bubble.id}
                   initial={{ opacity: 0, y: 0, x: bubble.x }}
