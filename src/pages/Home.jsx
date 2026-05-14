@@ -25,21 +25,30 @@ export default function Home() {
   }, []);
 
   const { scrollYProgress } = useScroll();
-  const x_main_title = useTransform(scrollYProgress, [0, 0.4], [0, isDesktop ? -400 : 0]);
+  const x_main_title = useTransform(scrollYProgress, [0, 0.25], [0, isDesktop ? -800 : 0]);
 
   return (
     <>
       {/* Hero section */}
-      <div className="relative h-[250vh]">
+      <div className="relative h-[150vh]">
         <div className="mt-[100vh] absolute inset-0"></div>
 
-        <div className="sticky top-0 z-20 overflow-visible h-svh flex flex-col">
+        <div className="sticky top-0 z-20 overflow-hidden h-svh flex flex-col">
           <Section
-            background={heroProfile}
             className="sticky top-0 left-0 w-full min-h-screen flex flex-col justify-center items-center h-screen text-white text-center z-0 overflow-hidden"
           >
+            {/* Parallax zoom background */}
+            <motion.img
+              src={heroProfile}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              style={{
+                scale: useTransform(scrollYProgress, [0, 0.25], [1, 1.15]),
+                willChange: "transform",
+              }}
+            />
             <motion.h1
-              className="h-dvh flex flex-col justify-center items-center text-amber-50 w-full font-coolvetica font-20vw"
+              className="relative z-10 h-dvh flex flex-col justify-center items-center text-amber-50 w-full font-coolvetica font-20vw"
               style={{ x: x_main_title, willChange: "transform" }}
             >
               <SplitTextReveal
@@ -58,7 +67,7 @@ export default function Home() {
 
       {/* About section — editorial two-column */}
       <div
-        className="relative z-30 mt-[-50rem] sm:mt-[-66rem] lg:mt-[-46rem] bg-black w-full"
+        className="relative z-30 mt-[-20rem] sm:mt-[-30rem] lg:mt-[-24rem] bg-black w-full"
         id="about"
       >
         <FloatingStrokes count={14} />
