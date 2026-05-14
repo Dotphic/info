@@ -99,8 +99,16 @@ export default function Home() {
                     <li key={s} className="hover:text-amber-50 transition-colors border-b border-white/5 pb-3">{s}</li>
                   ))}
                 </ul>
-                <div className="pt-4 text-neutral-500 text-xs leading-relaxed max-w-xs text-center">
-                  denver, colorado — available for creative collaborations worldwide
+                <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-x-4 gap-y-4">
+                  {[
+                    { label: "Based in", value: "Denver, CO" },
+                    { label: "Available", value: "Worldwide" },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="flex flex-col gap-1">
+                      <span className="text-xs uppercase tracking-[0.25em] text-neutral-600">{label}</span>
+                      <span className="text-sm uppercase tracking-wide text-amber-50/80">{value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
