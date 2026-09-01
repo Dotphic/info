@@ -1,5 +1,5 @@
 import heroProfile from "../assets/images/hero-profile.png";
-import CV from "../assets/documents/Robel-Tamiru-Sebsibe-Resume[04-2025].pdf";
+import CV from "../assets/documents/Robel-Tamiru-Sebsibe-Resume[09-2026].pdf";
 
 import Straight from "../assets/images/straight.jpg";
 
@@ -124,7 +124,7 @@ export default function Home() {
             </Link>
             <motion.a
               href={CV}
-              download="Robel-Tamiru-Sebsibe-Resume[04-2025].pdf"
+              download="Robel-Tamiru-Sebsibe-Resume[09-2026].pdf"
               className="text-neutral-400 text-sm uppercase tracking-[0.2em] hover:text-amber-50 transition-colors border-b border-neutral-700 hover:border-amber-50 pb-0.5"
               whileHover={{ y: -1 }}
             >
