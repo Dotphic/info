@@ -1,3 +1,4 @@
+import SocialMuralSeventeen from "../assets/images/social-media/social-media-17.jpg";
 import SocialMuralOne from "../assets/images/social-media/social-media-01.jpg";
 import SocialMuralTwo from "../assets/images/social-media/social-media-02.jpg";
 import SocialMuralThree from "../assets/images/social-media/social-media-03.jpg";
@@ -16,6 +17,7 @@ import SocialMuralFifteen from "../assets/images/social-media/social-media-15.jp
 import SocialMuralSixteen from "../assets/images/social-media/social-media-16.jpg";
 
 const SocialMediaMural = [
+  SocialMuralSeventeen,
   SocialMuralOne,
   SocialMuralTwo,
   SocialMuralThree,

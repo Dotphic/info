@@ -8,11 +8,11 @@ import FloatingStrokes from "../components/FloatingStrokes";
 import ImageMasonry from "../components/ImageMasonry";
 
 const categories = [
+  { id: "socialmedia", label: "Social Media", items: SocialMediaMural.map((src) => ({ src })) },
   { id: "branding", label: "Branding", items: GraphicsMural.map((src) => ({ src })) },
   { id: "magazine", label: "Magazine", items: MagazineMurals.map((src) => ({ src })) },
   { id: "poster", label: "Poster", items: Posters.map((src) => ({ src })) },
   { id: "webdesign", label: "Web Design", items: WebMural.map((src) => ({ src })) },
-  { id: "socialmedia", label: "Social Media", items: SocialMediaMural.map((src) => ({ src })) },
 ];
 
 
